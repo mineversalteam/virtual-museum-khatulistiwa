@@ -2,6 +2,38 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
+
+@font-face {
+  font-family: 'MinecraftEnchantment';
+  src: url('/assets/fonts/minecraft-enchantment.woff2') format('woff2'),
+      url('/assets/fonts/minecraft-enchantment.woff') format('woff'),
+      url('/assets/fonts/minecraft-enchantment.ttf') format('ttf');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Minecraftia';
+  src: url('/assets/fonts/Minecraftia-Regular.woff2') format('woff2'),
+      url('/assets/fonts/Minecraftia-Regular.woff') format('woff'),
+      url('/assets/fonts/Minecraftia-Regular.ttf') format('ttf');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'MinecraftTen';
+  src: url('/assets/fonts/MinecraftTen.woff2') format('woff2'),
+      url('/assets/fonts/MinecraftTen.woff') format('woff'),
+      url('/assets/fonts/MinecraftTen.ttf') format('ttf');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 html,
 body {
   padding: 0;
