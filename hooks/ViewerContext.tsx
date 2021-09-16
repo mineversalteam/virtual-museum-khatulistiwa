@@ -61,6 +61,10 @@ export interface OrbitConfig {
 export interface ViewerValues {
   maps: MapRegion[];
   setMaps: State<MapRegion[]>;
+  activeMap: number;
+  setActiveMap: State<number>;
+  activeRegion: number;
+  setActiveRegion: State<number>;
   index: number;
   setIndex: State<number>;
   hotspots: Hotspot[];
@@ -71,21 +75,34 @@ export interface ViewerValues {
   setDisableControl: State<boolean>;
   cameraConfig: CameraConfig;
   orbitConfig: OrbitConfig;
+  loading: boolean;
+  setLoading: State<boolean>;
   frustum: Frustum;
+  update: () => boolean;
+  reset: (counterOnly: boolean) => void;
 }
 
 export default ViewerContext;
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const Provider = (props: any) => {
   const [maps, setMaps] = useState<MapRegion[]>(Maps);
-  const [index, setIndex] = useState(0);
+  const [activeRegion, setActiveRegion] = useState(0);
+  const [activeMap, setActiveMap] = useState(0);
+
   const [hotspots, setHotspots] = useState<Hotspot[]>([]);
+  const [index, setIndex] = useState(0);
+
   const [isShowingInfo, setShowingInfo] = useState(false);
   const [disableControl, setDisableControl] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   const value: ViewerValues = {
     maps,
     setMaps,
+    activeMap,
+    setActiveMap,
+    activeRegion,
+    setActiveRegion,
     index,
     setIndex,
     hotspots,
@@ -94,6 +111,8 @@ export const Provider = (props: any) => {
     setShowingInfo,
     disableControl,
     setDisableControl,
+    loading,
+    setLoading,
     frustum: new Frustum(),
     cameraConfig: {
       fov: 65,
@@ -102,6 +121,27 @@ export const Provider = (props: any) => {
     },
     orbitConfig: {
       target: [1, -0.2, 0],
+    },
+    reset(counterOnly = true) {
+      setActiveRegion(0);
+      setActiveMap(0);
+      setIndex(0);
+      if (counterOnly) return;
+
+      setShowingInfo(false);
+      setDisableControl(false);
+      setHotspots([]);
+      setMaps([]);
+    },
+    update() {
+      const { maps: activeMapObj } = maps[activeRegion];
+      if (!activeMapObj) return false;
+
+      const { hotspots } = activeMapObj[activeMap];
+      if (!hotspots) return false;
+
+      setHotspots(hotspots);
+      return true;
     },
   };
 
