@@ -1,9 +1,9 @@
-import Demo from '@/components/Demo';
+import Viewer from '@/components/Viewer';
 
 const Home = () => {
   return (
     <div>
-      <Demo />
+      <Viewer />
     </div>
   );
 };
