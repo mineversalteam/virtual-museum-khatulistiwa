@@ -1,1 +1,44 @@
-[]
+[
+  {
+    "id": "0",
+    "region": "Asia Tenggara",
+    "maps": [
+      {
+        "id": "at-hall",
+        "name": "Hall",
+        "hotspots": [
+          {
+            "position": [15000, -3500, 2800],
+            "name": "test",
+            "id": "info-test",
+            "info": {
+              "model": "/assets/skybox/random/model/test.glb",
+              "title": "Halo",
+              "subtitle": "Gan",
+              "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Feugiat nibh sed pulvinar proin gravida hendrerit. Pharetra magna ac placerat vestibulum lectus mauris ultrices eros. Duis convallis convallis tellus id interdum velit laoreet. Mi quis hendrerit dolor magna eget est."
+            }
+          },
+          {
+            "position": [4000, -3000, 6000],
+            "name": "info",
+            "id": "info-test2",
+            "size": ["4rem"],
+            "info": {
+              "title": "Wa",
+              "subtitle": "e",
+              "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Feugiat nibh sed pulvinar proin gravida hendrerit. Pharetra magna ac placerat vestibulum lectus mauris ultrices eros. Duis convallis convallis tellus id interdum velit laoreet. Mi quis hendrerit dolor magna eget est."
+            }
+          }
+        ],
+        "texture": [
+          "./assets/skybox/random/front.webp",
+          "./assets/skybox/random/back.webp",
+          "./assets/skybox/random/top.webp",
+          "./assets/skybox/random/bottom.webp",
+          "./assets/skybox/random/left.webp",
+          "./assets/skybox/random/right.webp"
+        ]
+      }
+    ]
+  }
+]

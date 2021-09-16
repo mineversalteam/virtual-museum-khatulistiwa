@@ -13,19 +13,38 @@ const ViewerContext = createContext({});
 
 type State<T> = Dispatch<SetStateAction<T>>;
 
-export interface Hotspot {
+export interface HotspotObject {
   element: HTMLElement;
   position: Vector3;
   id: string;
   name?: string;
 }
 
+export interface HotspotInfo {
+  title: string;
+  subtitle?: string;
+  description?: string;
+  model?: string;
+}
+export interface Hotspot {
+  position: number[];
+  id: string;
+  name?: string;
+  size?: string[];
+  info?: HotspotInfo;
+}
+
 export interface Map {
   id: string;
   name?: string;
-  description?: string;
   hotspots?: Hotspot[];
-  texture: [string, string, string, string, string, string];
+  texture: string[];
+}
+
+export interface MapRegion {
+  region: string;
+  id: string;
+  maps: Map[];
 }
 
 export interface CameraConfig {
@@ -40,8 +59,8 @@ export interface OrbitConfig {
 }
 
 export interface ViewerValues {
-  maps: Map[];
-  setMaps: State<Map[]>;
+  maps: MapRegion[];
+  setMaps: State<MapRegion[]>;
   index: number;
   setIndex: State<number>;
   hotspots: Hotspot[];
@@ -58,7 +77,7 @@ export interface ViewerValues {
 export default ViewerContext;
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const Provider = (props: any) => {
-  const [maps, setMaps] = useState<Map[]>(Maps);
+  const [maps, setMaps] = useState<MapRegion[]>(Maps);
   const [index, setIndex] = useState(0);
   const [hotspots, setHotspots] = useState<Hotspot[]>([]);
   const [isShowingInfo, setShowingInfo] = useState(false);

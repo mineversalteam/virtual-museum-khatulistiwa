@@ -1,4 +1,4 @@
-import Viewer from '@/components/Viewer';
+import Viewer from '@/components/viewer';
 
 const Home = () => {
   return (
