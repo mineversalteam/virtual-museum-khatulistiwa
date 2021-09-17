@@ -48,7 +48,7 @@ const Expanded = () => {
             ].join(' ')}
             onClick={() => {
               if (i === data.activeMap) return;
-              data.setActiveMap(i);
+              data.setMap(i);
               setExpanded(false);
             }}
             {...(i !== data.activeMap && { whileHover: { scale: 1.1 } })}
@@ -71,8 +71,8 @@ const Expanded = () => {
             ].join(' ')}
             onClick={() => {
               if (i === data.activeRegion) return;
-              data.reset();
-              data.setActiveRegion(i);
+              data.setRegion(i);
+              setExpanded(false);
             }}
             {...(i !== data.activeRegion && { whileHover: { scale: 1.1 } })}
           >

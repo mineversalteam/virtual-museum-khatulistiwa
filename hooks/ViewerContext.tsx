@@ -1,11 +1,14 @@
-import { createContext, useState, useContext } from 'react';
+import { createContext, useState, useContext, useEffect } from 'react';
 import { Frustum } from 'three';
 import Maps from '@/maps.json';
 import { Vector3 } from '@react-three/fiber';
 import clamp from '@/utils/clamp';
 import State from '@/utils/state';
+import { useProgress } from '@react-three/drei';
+import EventEmitter from 'eventemitter3';
 
 const ViewerContext = createContext({});
+const emitter = new EventEmitter();
 
 export interface HotspotObject {
   element: HTMLElement;
@@ -53,6 +56,7 @@ export interface OrbitConfig {
 }
 
 export interface ViewerValues {
+  emitter: EventEmitter;
   maps: MapRegion[];
   setMaps: State<MapRegion[]>;
   activeMap: number;
@@ -77,6 +81,8 @@ export interface ViewerValues {
   setHideHotspot: State<boolean>;
   offscreened: string[];
   setOffscreened: State<string[]>;
+  show360: boolean;
+  setShow360: State<boolean>;
   frustum: Frustum;
   update: () => boolean;
   reset: (counterOnly?: boolean) => void;
@@ -84,6 +90,8 @@ export interface ViewerValues {
   prevRegion: () => void;
   showInfo: (index: number) => void;
   hideInfo: () => void;
+  setRegion: (index: number) => void;
+  setMap: (index: number) => void;
 }
 
 export default ViewerContext;
@@ -103,8 +111,26 @@ export const Provider = (props: any) => {
   const [loading, setLoading] = useState(true);
   const [hideHotspot, setHideHotspot] = useState(false);
   const [offscreened, setOffscreened] = useState<string[]>([]);
+  const [show360, setShow360] = useState(true);
+
+  const { progress } = useProgress();
+
+  useEffect(() => {
+    // eslint-disable-next-line no-undef
+    let timeout: NodeJS.Timeout;
+    // if (!loading && Math.floor(progress) !== 100) setLoading(true);
+    if (loading && Math.floor(progress) === 100) {
+      timeout = setTimeout(() => {
+        setLoading(false);
+        if (show360) setShow360(false);
+      }, 1500);
+    }
+
+    return () => clearTimeout(timeout);
+  }, [loading, progress, show360]);
 
   const value: ViewerValues = {
+    emitter,
     maps,
     setMaps,
     activeMap,
@@ -127,6 +153,8 @@ export const Provider = (props: any) => {
     setHideHotspot,
     offscreened,
     setOffscreened,
+    show360,
+    setShow360,
     frustum: new Frustum(),
     cameraConfig: {
       fov: 65,
@@ -158,12 +186,21 @@ export const Provider = (props: any) => {
       return true;
     },
     nextRegion() {
-      setActiveRegion(clamp(activeRegion + 1, 0, maps.length - 1));
-      this.reset();
+      this.setRegion(clamp(activeRegion + 1, 0, maps.length - 1));
     },
     prevRegion() {
-      setActiveRegion(clamp(activeRegion - 1, 0, maps.length - 1));
-      this.reset();
+      this.setRegion(clamp(activeRegion - 1, 0, maps.length - 1));
+    },
+    setRegion(index) {
+      emitter.once('loader:close', () => {
+        this.reset();
+        setActiveRegion(index);
+      });
+      setLoading(true);
+    },
+    setMap(index) {
+      emitter.once('loader:close', () => setActiveMap(index));
+      setLoading(true);
     },
     showInfo(index) {
       setActiveInfo(index);
