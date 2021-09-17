@@ -25,12 +25,12 @@ const Expanded = () => {
       }}
       transition={{ duration: 0.3, delay: 0.1, ease: 'easeInOut' }}
       className={[
-        'z-20 flex flex-col items-center font-minecraftia text-gray-50 absolute top-0 w-full h-screen bg-black bg-opacity-50',
+        'opacity-0 select-none z-20 flex flex-col items-center font-minecraftia text-gray-50 absolute top-0 w-full h-screen bg-black bg-opacity-50',
         expanded ? 'pointer-events-auto' : 'pointer-events-none',
       ].join(' ')}
     >
       <span
-        className='absolute right-4 top-6 select-none cursor-pointer font-minecraftia text-4xl'
+        className='absolute right-4 top-6 cursor-pointer font-minecraftia text-4xl'
         onClick={() => setExpanded(false)}
       >
         x
@@ -58,7 +58,7 @@ const Expanded = () => {
         ))}
       </ul>
 
-      <ul className='list-none flex mb-4 select-none'>
+      <ul className='list-none flex mb-4'>
         {data.maps.map((m, i) => (
           <motion.li
             key={m.id}
@@ -73,7 +73,6 @@ const Expanded = () => {
               if (i === data.activeRegion) return;
               data.reset();
               data.setActiveRegion(i);
-              setExpanded(false);
             }}
             {...(i !== data.activeRegion && { whileHover: { scale: 1.1 } })}
           >
@@ -97,7 +96,7 @@ const NotExpanded = () => {
         opacity: expanded ? 0 : 1,
       }}
       transition={{ duration: 0.3, ease: 'easeIn' }}
-      className='text-gray-50 text-2xl absolute flex justify-center items-center z-10 bottom-4 w-full'
+      className='select-none text-gray-50 text-2xl absolute flex justify-center items-center z-10 bottom-4 w-full'
     >
       <div className='flex items-center pointer-events-auto px-6 bg-black bg-opacity-50'>
         <FontAwesomeIcon
@@ -111,7 +110,7 @@ const NotExpanded = () => {
           transition={{ duration: 0.5, ease: 'easeInOut' }}
         >
           <h1
-            className='text-center select-none font-minecraftia mt-5 cursor-pointer filter drop-shadow-lg'
+            className='text-center font-minecraftia mt-5 cursor-pointer filter drop-shadow-lg'
             onClick={() => setExpanded(true)}
           >
             {region}
