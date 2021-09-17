@@ -8,6 +8,7 @@ import {
 import { Frustum } from 'three';
 import Maps from '@/maps.json';
 import { Vector3 } from '@react-three/fiber';
+import clamp from '@/utils/clamp';
 
 const ViewerContext = createContext({});
 
@@ -79,7 +80,9 @@ export interface ViewerValues {
   setLoading: State<boolean>;
   frustum: Frustum;
   update: () => boolean;
-  reset: (counterOnly: boolean) => void;
+  reset: (counterOnly?: boolean) => void;
+  nextRegion: () => void;
+  prevRegion: () => void;
 }
 
 export default ViewerContext;
@@ -123,11 +126,11 @@ export const Provider = (props: any) => {
       target: [1, -0.2, 0],
     },
     reset(counterOnly = true) {
-      setActiveRegion(0);
       setActiveMap(0);
       setIndex(0);
       if (counterOnly) return;
 
+      setActiveRegion(0);
       setShowingInfo(false);
       setDisableControl(false);
       setHotspots([]);
@@ -142,6 +145,14 @@ export const Provider = (props: any) => {
 
       setHotspots(hotspots);
       return true;
+    },
+    nextRegion() {
+      setActiveRegion(clamp(activeRegion + 1, 0, maps.length - 1));
+      this.reset();
+    },
+    prevRegion() {
+      setActiveRegion(clamp(activeRegion - 1, 0, maps.length - 1));
+      this.reset();
     },
   };
 

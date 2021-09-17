@@ -10,6 +10,12 @@ import Indicator from './Indicator';
 const Viewer = () => {
   const data = useViewer();
 
+  // useEffect(() => {
+  //   const a = setTimeout(() => data.setActiveMap(1), 3000);
+  //   return () => clearTimeout(a);
+  //   // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, []);
+
   return (
     <div className='relative'>
       <div className='absolute z-10 h-screen w-full pointer-events-none'>

@@ -38,7 +38,13 @@
           "./assets/skybox/random/left.webp",
           "./assets/skybox/random/right.webp"
         ]
-      },
+      }
+    ]
+  },
+  {
+    "id": "1",
+    "region": "Thailand",
+    "maps": [
       {
         "id": "at-village",
         "name": "Village",
