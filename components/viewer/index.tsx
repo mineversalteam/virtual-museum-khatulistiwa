@@ -1,23 +1,29 @@
 import { Canvas } from '@react-three/fiber';
 import { useViewer } from '@/hooks/ViewerContext';
+import { Suspense } from 'react';
 import EventHandlers from './EventHandlers';
 import Camera from './Camera';
+import Skybox from './Skybox';
 
 const Viewer = () => {
   const data = useViewer();
 
   return (
-    <Canvas>
-      <Camera data={data} />
+    <div>
+      <Canvas>
+        <Camera data={data} />
 
-      <ambientLight intensity={1} />
-      <mesh scale={1} position={[10, 0, 5]}>
-        <boxGeometry args={[1, 1, 1]} />
-        <meshStandardMaterial color='orange' />
-      </mesh>
+        <Suspense fallback={null}>
+          <Skybox
+            texture={
+              data?.maps?.[data.activeRegion]?.maps?.[data.activeMap]?.texture
+            }
+          />
+        </Suspense>
 
-      <EventHandlers />
-    </Canvas>
+        <EventHandlers />
+      </Canvas>
+    </div>
   );
 };
 
