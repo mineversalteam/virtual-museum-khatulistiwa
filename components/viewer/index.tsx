@@ -4,15 +4,22 @@ import { Suspense } from 'react';
 import EventHandlers from './EventHandlers';
 import Camera from './Camera';
 import Skybox from './Skybox';
+import Menu from './Menu';
+import Indicator from './Indicator';
 
 const Viewer = () => {
   const data = useViewer();
 
   return (
-    <div>
+    <div className='relative'>
+      <div className='absolute z-10 h-screen w-full pointer-events-none'>
+        <Indicator />
+
+        <Menu data={data} />
+      </div>
+
       <Canvas>
         <Camera data={data} />
-
         <Suspense fallback={null}>
           <Skybox
             texture={
