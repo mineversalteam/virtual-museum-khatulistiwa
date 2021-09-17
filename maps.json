@@ -22,7 +22,7 @@
             "position": [4000, -3000, 6000],
             "name": "info",
             "id": "info-test2",
-            "size": ["4rem"],
+            "size": ["60px", "60px"],
             "info": {
               "title": "Wa",
               "subtitle": "e",

@@ -75,11 +75,15 @@ export interface ViewerValues {
   setLoading: State<boolean>;
   hideHotspot: boolean;
   setHideHotspot: State<boolean>;
+  offscreened: string[];
+  setOffscreened: State<string[]>;
   frustum: Frustum;
   update: () => boolean;
   reset: (counterOnly?: boolean) => void;
   nextRegion: () => void;
   prevRegion: () => void;
+  showInfo: (index: number) => void;
+  hideInfo: () => void;
 }
 
 export default ViewerContext;
@@ -98,6 +102,7 @@ export const Provider = (props: any) => {
   const [disableControl, setDisableControl] = useState(false);
   const [loading, setLoading] = useState(true);
   const [hideHotspot, setHideHotspot] = useState(false);
+  const [offscreened, setOffscreened] = useState<string[]>([]);
 
   const value: ViewerValues = {
     maps,
@@ -120,6 +125,8 @@ export const Provider = (props: any) => {
     setLoading,
     hideHotspot,
     setHideHotspot,
+    offscreened,
+    setOffscreened,
     frustum: new Frustum(),
     cameraConfig: {
       fov: 65,
@@ -157,6 +164,15 @@ export const Provider = (props: any) => {
     prevRegion() {
       setActiveRegion(clamp(activeRegion - 1, 0, maps.length - 1));
       this.reset();
+    },
+    showInfo(index) {
+      setActiveInfo(index);
+      setShowingInfo(true);
+      setHideHotspot(true);
+    },
+    hideInfo() {
+      setShowingInfo(false);
+      setHideHotspot(false);
     },
   };
 

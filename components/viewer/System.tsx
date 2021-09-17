@@ -1,7 +1,12 @@
 import { ViewerValues } from '@/hooks/ViewerContext';
 import { useThree, useFrame } from '@react-three/fiber';
 import { useEffect } from 'react';
-import { WebGLRenderer, PerspectiveCamera as TPCamera, Matrix4 } from 'three';
+import {
+  WebGLRenderer,
+  PerspectiveCamera as TPCamera,
+  Matrix4,
+  Vector3,
+} from 'three';
 
 interface UseThreeTypes {
   camera: TPCamera;
@@ -47,6 +52,25 @@ const System = ({ data }: IProps) => {
         camera.matrixWorldInverse
       )
     );
+
+    const offscreen: string[] = [];
+    data.hotspots.forEach(({ id, position }) => {
+      const el = document.getElementById(id);
+      if (!el) return;
+
+      const vec = new Vector3(...position);
+      const isOffscreen = !data.frustum.containsPoint(vec);
+
+      vec.project(camera);
+      const x = Math.round((vec.x * 0.5 + 0.5) * window.innerWidth);
+      const y = Math.round((vec.y * -0.5 + 0.5) * window.innerHeight);
+
+      if (isOffscreen) offscreen.push(id);
+
+      el.style.transform = `translate(-50%, -50%) translate(${x}px, ${y}px)`;
+    });
+
+    data.setOffscreened(offscreen);
   });
 
   return null;
