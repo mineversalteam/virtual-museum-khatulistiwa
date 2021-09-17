@@ -1,7 +1,7 @@
 [
   {
     "id": "0",
-    "region": "Asia Tenggara",
+    "region": "Jawa",
     "maps": [
       {
         "id": "at-village",
@@ -37,6 +37,19 @@
           "./assets/skybox/random/bottom.webp",
           "./assets/skybox/random/left.webp",
           "./assets/skybox/random/right.webp"
+        ]
+      },
+      {
+        "id": "at-village",
+        "name": "Village",
+        "hotspots": [],
+        "texture": [
+          "./assets/skybox/garden/front.webp",
+          "./assets/skybox/garden/back.webp",
+          "./assets/skybox/garden/top.webp",
+          "./assets/skybox/garden/bottom.webp",
+          "./assets/skybox/garden/left.webp",
+          "./assets/skybox/garden/right.webp"
         ]
       }
     ]
