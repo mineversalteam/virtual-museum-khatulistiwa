@@ -1,20 +1,15 @@
 import { Canvas } from '@react-three/fiber';
 import { useViewer } from '@/hooks/ViewerContext';
 import { Suspense } from 'react';
-import EventHandlers from './EventHandlers';
+import System from './System';
 import Camera from './Camera';
 import Skybox from './Skybox';
 import Menu from './Menu';
 import Indicator from './Indicator';
+import Hotspots from './Hotspots';
 
 const Viewer = () => {
   const data = useViewer();
-
-  // useEffect(() => {
-  //   const a = setTimeout(() => data.setActiveMap(1), 3000);
-  //   return () => clearTimeout(a);
-  //   // eslint-disable-next-line react-hooks/exhaustive-deps
-  // }, []);
 
   return (
     <div className='relative'>
@@ -22,6 +17,7 @@ const Viewer = () => {
         <Indicator />
 
         <Menu data={data} />
+        <Hotspots data={data} />
       </div>
 
       <Canvas>
@@ -34,7 +30,7 @@ const Viewer = () => {
           />
         </Suspense>
 
-        <EventHandlers />
+        <System data={data} />
       </Canvas>
     </div>
   );

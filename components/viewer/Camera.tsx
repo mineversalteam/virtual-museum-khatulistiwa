@@ -16,6 +16,7 @@ const Camera = ({ data }: ICamProps) => {
       <PerspectiveCamera makeDefault ref={cam} {...data.cameraConfig} />
       <OrbitControls
         camera={cam.current}
+        enabled={!data.disableControl}
         enablePan={false}
         enableZoom={false}
         enableDamping

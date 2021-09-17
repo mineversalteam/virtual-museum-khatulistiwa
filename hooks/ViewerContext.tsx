@@ -65,12 +65,16 @@ export interface ViewerValues {
   setHotspots: State<Hotspot[]>;
   isShowingInfo: boolean;
   setShowingInfo: State<boolean>;
+  activeInfo: number;
+  setActiveInfo: State<number>;
   disableControl: boolean;
   setDisableControl: State<boolean>;
   cameraConfig: CameraConfig;
   orbitConfig: OrbitConfig;
   loading: boolean;
   setLoading: State<boolean>;
+  hideHotspot: boolean;
+  setHideHotspot: State<boolean>;
   frustum: Frustum;
   update: () => boolean;
   reset: (counterOnly?: boolean) => void;
@@ -88,9 +92,12 @@ export const Provider = (props: any) => {
   const [hotspots, setHotspots] = useState<Hotspot[]>([]);
   const [index, setIndex] = useState(0);
 
+  const [activeInfo, setActiveInfo] = useState(0);
   const [isShowingInfo, setShowingInfo] = useState(false);
+
   const [disableControl, setDisableControl] = useState(false);
   const [loading, setLoading] = useState(true);
+  const [hideHotspot, setHideHotspot] = useState(false);
 
   const value: ViewerValues = {
     maps,
@@ -105,10 +112,14 @@ export const Provider = (props: any) => {
     setHotspots,
     isShowingInfo,
     setShowingInfo,
+    activeInfo,
+    setActiveInfo,
     disableControl,
     setDisableControl,
     loading,
     setLoading,
+    hideHotspot,
+    setHideHotspot,
     frustum: new Frustum(),
     cameraConfig: {
       fov: 65,

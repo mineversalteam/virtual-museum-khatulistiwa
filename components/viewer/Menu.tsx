@@ -2,7 +2,7 @@ import { ViewerValues } from '@/hooks/ViewerContext';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretLeft, faCaretRight } from '@fortawesome/free-solid-svg-icons';
 import { motion } from 'framer-motion';
-import { createContext, useState, useContext } from 'react';
+import { createContext, useState, useContext, useEffect } from 'react';
 import State from '@/utils/state';
 
 const MenuContext = createContext({});
@@ -131,6 +131,12 @@ const Menu = ({
   data,
 }: Omit<Omit<ContextValue, 'expanded'>, 'setExpanded'>) => {
   const [expanded, setExpanded] = useState(false);
+
+  useEffect(() => {
+    if (expanded) data.setHideHotspot(true);
+    else data.setHideHotspot(false);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [expanded]);
 
   const value = {
     data,

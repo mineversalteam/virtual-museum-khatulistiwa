@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import Image from 'next/image';
 import { useState, useEffect } from 'react';
 
 const Indicator = () => {
@@ -17,7 +16,8 @@ const Indicator = () => {
       transition={{ duration: 0.3, delay: 2, ease: 'easeIn' }}
       className='flex items-center justify-center w-full h-screen pointer-events-none'
     >
-      <Image
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
         src='/assets/icons/360deg.webp'
         alt='360 Indicator'
         width='120'
