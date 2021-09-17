@@ -38,6 +38,19 @@
           "./assets/skybox/random/left.webp",
           "./assets/skybox/random/right.webp"
         ]
+      },
+      {
+        "id": "at-mansion",
+        "name": "Java Mansion",
+        "hotspots": [],
+        "texture": [
+          "./assets/skybox/garden/front.webp",
+          "./assets/skybox/garden/back.webp",
+          "./assets/skybox/garden/top.webp",
+          "./assets/skybox/garden/bottom.webp",
+          "./assets/skybox/garden/left.webp",
+          "./assets/skybox/garden/right.webp"
+        ]
       }
     ]
   },
@@ -46,8 +59,8 @@
     "region": "Thailand",
     "maps": [
       {
-        "id": "at-village",
-        "name": "Village",
+        "id": "th-mansion",
+        "name": "Mansion",
         "hotspots": [],
         "texture": [
           "./assets/skybox/garden/front.webp",

@@ -1,18 +1,11 @@
-import {
-  createContext,
-  useState,
-  useContext,
-  Dispatch,
-  SetStateAction,
-} from 'react';
+import { createContext, useState, useContext } from 'react';
 import { Frustum } from 'three';
 import Maps from '@/maps.json';
 import { Vector3 } from '@react-three/fiber';
 import clamp from '@/utils/clamp';
+import State from '@/utils/state';
 
 const ViewerContext = createContext({});
-
-type State<T> = Dispatch<SetStateAction<T>>;
 
 export interface HotspotObject {
   element: HTMLElement;
@@ -30,15 +23,15 @@ export interface HotspotInfo {
 export interface Hotspot {
   position: number[];
   id: string;
-  name?: string;
+  name: string;
   size?: string[];
   info?: HotspotInfo;
 }
 
 export interface Map {
   id: string;
-  name?: string;
-  hotspots?: Hotspot[];
+  name: string;
+  hotspots: Hotspot[];
   texture: string[];
 }
 

@@ -18,7 +18,7 @@ const Viewer = () => {
 
   return (
     <div className='relative'>
-      <div className='absolute z-10 h-screen w-full pointer-events-none'>
+      <div className='absolute z-10 overflow-hidden h-screen w-full pointer-events-none'>
         <Indicator />
 
         <Menu data={data} />
