@@ -6,7 +6,6 @@ interface IProps {
   data: ViewerValues;
 }
 
-// eslint-disable-next-line react/display-name
 const Camera = ({ data }: IProps) => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const cam = createRef<any>();

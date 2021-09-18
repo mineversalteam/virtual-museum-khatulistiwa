@@ -1,5 +1,8 @@
 import { ViewerValues } from '@/hooks/ViewerContext';
 import { motion } from 'framer-motion';
+import { useEffect } from 'react';
+import Model from './Model';
+import { useGLTF } from '@react-three/drei';
 
 interface IProps {
   data: ViewerValues;
@@ -7,6 +10,12 @@ interface IProps {
 
 const Popup = ({ data }: IProps) => {
   const info = data.hotspots?.[data.activeInfo]?.info;
+
+  useEffect(() => {
+    if (info?.media?.url && info?.media?.type === 'model') {
+      useGLTF.preload(info?.media?.url);
+    }
+  }, [info]);
 
   return (
     <motion.div
@@ -30,7 +39,7 @@ const Popup = ({ data }: IProps) => {
       >
         <div className='absolute flex flex-col top-0 left-0 z-30 p-12 w-full h-full'>
           <span
-            className='absolute self-end font-minecraftia text-3xl select-none cursor-pointer'
+            className='z-20 absolute self-end font-minecraftia text-3xl select-none cursor-pointer'
             onClick={() => data.hideInfo()}
           >
             x
@@ -57,8 +66,13 @@ const Popup = ({ data }: IProps) => {
               </div>
             </div>
 
-            <div id='viewer-info-popup-content-right' className='w-1/2 pl-8'>
-              test
+            <div
+              id='viewer-info-popup-content-right'
+              className='w-1/2 pl-8 z-10'
+            >
+              {info?.media?.type === 'model' && (
+                <Model url={info?.media?.url} />
+              )}
             </div>
           </div>
         </div>

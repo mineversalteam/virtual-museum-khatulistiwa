@@ -19,7 +19,7 @@ export interface HotspotObject {
 
 export interface HotspotMedia {
   type: string;
-  url?: string;
+  url: string;
 }
 export interface HotspotInfo {
   title: string;
