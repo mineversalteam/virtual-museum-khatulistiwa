@@ -8,13 +8,14 @@ import Menu from './Menu';
 import Indicator from './Indicator';
 import Hotspots from './Hotspots';
 import Loader from './Loader';
+import Popup from './Popup';
 
 const Viewer = () => {
   const data = useViewer();
 
   return (
-    <div className='relative'>
-      <div className='absolute z-10 overflow-hidden h-screen w-full pointer-events-none'>
+    <div className='relative overflow-hidden'>
+      <div className='absolute z-10 h-screen w-full pointer-events-none'>
         <Indicator data={data} />
 
         <Menu data={data} />
@@ -33,6 +34,8 @@ const Viewer = () => {
 
         <System data={data} />
       </Canvas>
+
+      <Popup data={data} />
       <Loader data={data} />
     </div>
   );

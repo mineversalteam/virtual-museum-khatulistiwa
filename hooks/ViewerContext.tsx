@@ -17,11 +17,15 @@ export interface HotspotObject {
   name?: string;
 }
 
+export interface HotspotMedia {
+  type: string;
+  url?: string;
+}
 export interface HotspotInfo {
   title: string;
   subtitle?: string;
   description?: string;
-  model?: string;
+  media?: HotspotMedia;
 }
 export interface Hotspot {
   position: number[];
