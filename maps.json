@@ -28,8 +28,12 @@
             "size": ["60px", "60px"],
             "info": {
               "title": "Wa",
-              "subtitle": "e",
-              "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Feugiat nibh sed pulvinar proin gravida hendrerit. Pharetra magna ac placerat vestibulum lectus mauris ultrices eros. Duis convallis convallis tellus id interdum velit laoreet. Mi quis hendrerit dolor magna eget est."
+              "subtitle": "woooo",
+              "description": "anjay pizza",
+              "media": {
+                "type": "image",
+                "url": "https://i.imgur.com/0xgVI74.jpeg"
+              }
             }
           }
         ],

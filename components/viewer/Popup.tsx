@@ -10,6 +10,7 @@ interface IProps {
 
 const Popup = ({ data }: IProps) => {
   const info = data.hotspots?.[data.activeInfo]?.info;
+  const media = info?.media;
 
   useEffect(() => {
     if (info?.media?.url && info?.media?.type === 'model') {
@@ -68,10 +69,27 @@ const Popup = ({ data }: IProps) => {
 
             <div
               id='viewer-info-popup-content-right'
-              className='w-1/2 pl-8 z-10'
+              className='w-1/2 pl-8 z-10 relative flex items-center justify-center'
             >
-              {info?.media?.type === 'model' && (
-                <Model url={info?.media?.url} />
+              {media?.type === 'model' && <Model url={media?.url} />}
+
+              {media?.type === 'image' && (
+                <div className='relative inline-block'>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src='/assets/background/media.webp'
+                    alt=''
+                    className='absolute h-full w-full select-none'
+                    draggable={false}
+                  />
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={media?.url}
+                    alt=''
+                    className='select-none rounded'
+                    draggable={false}
+                  />
+                </div>
               )}
             </div>
           </div>

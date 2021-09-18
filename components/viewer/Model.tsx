@@ -32,7 +32,7 @@ const Model = ({ url }: IProps) => {
   const cam = createRef<any>();
 
   return (
-    <Canvas>
+    <Canvas className='filter drop-shadow-md'>
       <PerspectiveCamera makeDefault position={[-180, 80, 180]} ref={cam} />
       <OrbitControls
         camera={cam.current}
