@@ -19,6 +19,7 @@ const GLTF = ({ url }: IProps) => {
       node.material.transparent = true;
       // @ts-expect-error Type
       node.material.alphaTest = 0.2;
+      node.castShadow = true;
     }
   });
 

@@ -47,8 +47,8 @@
         ]
       },
       {
-        "id": "at-mansion",
-        "name": "Java Mansion",
+        "id": "th-mansion",
+        "name": "Bruh Mansion",
         "hotspots": [],
         "texture": [
           "./assets/skybox/garden/front.webp",
@@ -68,7 +68,22 @@
       {
         "id": "th-mansion",
         "name": "Mansion",
-        "hotspots": [],
+        "hotspots": [
+          {
+            "position": [15000, -10500, -13200],
+            "name": "nom",
+            "id": "info-anjaymakan",
+            "info": {
+              "title": "Shesh",
+              "subtitle": "lol",
+              "description": "makan",
+              "media": {
+                "type": "video",
+                "url": "https://i.imgur.com/F5wuUFA.mp4"
+              }
+            }
+          }
+        ],
         "texture": [
           "./assets/skybox/garden/front.webp",
           "./assets/skybox/garden/back.webp",

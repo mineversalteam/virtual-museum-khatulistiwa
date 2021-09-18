@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { useEffect } from 'react';
 import Model from './Model';
 import { useGLTF } from '@react-three/drei';
+import Video from '../Video';
 
 interface IProps {
   data: ViewerValues;
@@ -89,6 +90,20 @@ const Popup = ({ data }: IProps) => {
                     className='select-none rounded'
                     draggable={false}
                   />
+                </div>
+              )}
+
+              {media?.type === 'video' && (
+                <div className='relative inline-block'>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src='/assets/background/media.webp'
+                    alt=''
+                    className='absolute h-full w-full select-none z-20 pointer-events-none'
+                    draggable={false}
+                  />
+
+                  <Video url={media?.url} />
                 </div>
               )}
             </div>

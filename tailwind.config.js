@@ -25,6 +25,7 @@ module.exports = {
       },
       textColor: COLORS,
       borderColor: COLORS,
+      backgroundColor: COLORS,
     },
   },
   variants: {
