@@ -14,7 +14,7 @@
             "info": {
               "title": "Halo",
               "subtitle": "Gan",
-              "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Donec ultrices tincidunt arcu non sodales neque sodales ut etiam. Elementum facilisis leo vel fringilla. Massa tincidunt nunc pulvinar sapien et ligula ullamcorper. Adipiscing elit pellentesque habitant morbi tristique. Odio ut sem nulla pharetra. Ullamcorper velit sed ullamcorper morbi tincidunt ornare massa eget. Libero enim sed faucibus turpis. Ut morbi tincidunt augue interdum velit euismod in pellentesque massa. Tristique magna sit amet purus gravida quis blandit turpis. Quam viverra orci sagittis eu. Diam in arcu cursus euismod quis viverra nibh cras.",
+              "description": "**Lorem ipsum dolor sit amet**, *consectetur adipiscing elit*, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Donec ultrices tincidunt arcu non sodales neque sodales ut etiam. Elementum facilisis leo vel fringilla. Massa tincidunt nunc pulvinar sapien et ligula ullamcorper. Adipiscing elit pellentesque habitant morbi tristique. Odio ut sem nulla pharetra. Ullamcorper velit sed ullamcorper morbi tincidunt ornare massa eget. Libero enim sed faucibus turpis. Ut morbi tincidunt augue interdum velit euismod in pellentesque massa. Tristique magna sit amet purus gravida quis blandit turpis. Quam viverra orci sagittis eu. Diam in arcu cursus euismod quis viverra nibh cras.",
               "media": {
                 "type": "model",
                 "url": "./assets/skybox/random/model/test.glb"

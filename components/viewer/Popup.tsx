@@ -4,7 +4,8 @@ import { useEffect } from 'react';
 import Model from './Model';
 import { useGLTF } from '@react-three/drei';
 import Video from '../Video';
-
+import Markdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 interface IProps {
   data: ViewerValues;
 }
@@ -62,9 +63,12 @@ const Popup = ({ data }: IProps) => {
               </div>
 
               <div className='flex-grow overflow-y-auto'>
-                <p className='font-dmSans text-lg break-word pr-4'>
-                  {info?.description}
-                </p>
+                <Markdown
+                  remarkPlugins={[remarkGfm]}
+                  className='font-dmSans text-lg break-word pr-4'
+                >
+                  {info?.description as string}
+                </Markdown>
               </div>
             </div>
 
