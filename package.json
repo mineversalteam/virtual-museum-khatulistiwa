@@ -15,7 +15,7 @@
     "@react-three/drei": "7.8.0",
     "@react-three/fiber": "7.0.6",
     "@react-three/postprocessing": "2.0.5",
-    "eventemitter3": "^4.0.7",
+    "eventemitter3": "4.0.7",
     "framer-motion": "4.1.17",
     "next": "11.1.2",
     "react": "17.0.2",
