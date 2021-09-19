@@ -40,12 +40,25 @@
   box-sizing: border-box;
 }
 
-::-webkit-scrollbar {
+/* ::-webkit-scrollbar {
   width: 5px;
 }
 
 ::-webkit-scrollbar-track {
   background: #B7B7B7;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #7D5235;
+} */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #B7B7B7;
+  border: 2px #f2eee2 solid;
 }
 
 ::-webkit-scrollbar-thumb {

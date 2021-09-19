@@ -13,6 +13,7 @@ interface IProps {
 const Popup = ({ data }: IProps) => {
   const info = data.hotspots?.[data.activeInfo]?.info;
   const media = info?.media;
+  const map = data.maps[data.activeRegion];
 
   useEffect(() => {
     if (info?.media?.url && info?.media?.type === 'model') {
@@ -54,6 +55,9 @@ const Popup = ({ data }: IProps) => {
               className='flex flex-col w-1/2 pr-8'
             >
               <div className='border-b-2 border-secondary mb-4'>
+                <h3 className='font-minecraftia -mb-4 text-md'>
+                  {map?.region}
+                </h3>
                 <h2 className='font-minecraftTen text-5xl break-words'>
                   {info?.title}
                 </h2>
