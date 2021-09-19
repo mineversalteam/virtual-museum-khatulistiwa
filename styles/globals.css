@@ -40,6 +40,10 @@
   box-sizing: border-box;
 }
 
+a {
+  color: #431aad;
+}
+
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -57,7 +61,7 @@
 .book-full {
   border-image-slice: 4 fill;
   border-image-repeat: round;
-  border-image-width: 6px;
+  border-image-width: 5px;
 }
 
 .book-small {

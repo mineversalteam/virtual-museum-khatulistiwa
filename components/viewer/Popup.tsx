@@ -57,10 +57,10 @@ const Popup = ({ data }: IProps) => {
               className='flex flex-col md:w-1/2 md:pr-8'
             >
               <div className='border-b-2 border-secondary mb-4'>
-                <h2 className='font-minecraftTen text-5xl break-words'>
+                <h2 className='font-minecraftTen text-5xl break-words text-gray-900'>
                   {info?.title}
                 </h2>
-                <p className='mt-2 pb-1 font-dmSans font-semibold text-primary text-xl break-words'>
+                <p className='mt-2 pb-1 font-dmSans font-semibold text-primary text-xl text-gray-800 break-words'>
                   {`${map?.region}, ${info?.subtitle}`}
                 </p>
               </div>
