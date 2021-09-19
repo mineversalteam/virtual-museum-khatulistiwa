@@ -6,6 +6,8 @@ import { useGLTF } from '@react-three/drei';
 import Video from '../Video';
 import Markdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
+import MediaQuery from 'react-responsive';
+
 interface IProps {
   data: ViewerValues;
 }
@@ -29,7 +31,7 @@ const Popup = ({ data }: IProps) => {
       transition={{ duration: 0.3, delay: 0.3, ease: 'easeInOut' }}
       id='viewer-info-popup'
       className={[
-        'absolute bg-black bg-opacity-50 p-12 z-20 top-0 left-0 flex justify-center w-full h-screen',
+        'absolute bg-black bg-opacity-50 z-20 top-0 left-0 flex justify-center w-full h-screen p-2 md:p-12',
         data.isShowingInfo ? 'pointer-events-auto' : 'pointer-events-none',
       ].join(' ')}
     >
@@ -41,35 +43,32 @@ const Popup = ({ data }: IProps) => {
         transition={{ duration: 0.75, ease: 'backInOut' }}
         className='relative inline-block flex-grow'
       >
-        <div className='absolute flex flex-col top-0 left-0 z-30 p-12 w-full h-full'>
+        <div className='absolute flex flex-col top-0 left-0 z-30 px-14 py-12 md:p-12 w-full h-full'>
           <span
-            className='z-20 absolute self-end font-minecraftia text-3xl select-none cursor-pointer'
+            className='md:absolute z-20 self-end font-minecraftia text-3xl select-none cursor-pointer'
             onClick={() => data.hideInfo()}
           >
             x
           </span>
 
-          <div className='flex-grow flex overflow-hidden'>
+          <div className='flex-grow overflow-y-auto pr-4 flex flex-col-reverse md:flex-row md:overflow-hidden md:pr-0'>
             <div
               id='viewer-info-popup-content-left'
-              className='flex flex-col w-1/2 pr-8'
+              className='flex flex-col md:w-1/2 md:pr-8'
             >
               <div className='border-b-2 border-secondary mb-4'>
-                <h3 className='font-minecraftia -mb-4 text-md'>
-                  {map?.region}
-                </h3>
                 <h2 className='font-minecraftTen text-5xl break-words'>
                   {info?.title}
                 </h2>
-                <p className='mt-1 pb-1 font-dmSans font-semibold text-primary text-xl break-words'>
-                  {info?.subtitle}
+                <p className='mt-2 pb-1 font-dmSans font-semibold text-primary text-xl break-words'>
+                  {`${map?.region}, ${info?.subtitle}`}
                 </p>
               </div>
 
-              <div className='flex-grow overflow-y-auto'>
+              <div className='flex-grow overflow-x-hidden overflow-y-auto'>
                 <Markdown
                   remarkPlugins={[remarkGfm]}
-                  className='font-dmSans text-lg break-word pr-4'
+                  className='font-dmSans text-lg break-word pr-4 mb-2 md:mb-0'
                 >
                   {info?.description as string}
                 </Markdown>
@@ -78,7 +77,7 @@ const Popup = ({ data }: IProps) => {
 
             <div
               id='viewer-info-popup-content-right'
-              className='w-1/2 pl-8 z-10 relative flex items-center justify-center'
+              className='md:w-1/2 md:pl-8 z-10 relative flex items-center justify-center h-1/2 mb-6 md:h-auto md:mb-0'
             >
               {media?.type === 'model' && <Model url={media?.url} />}
 
@@ -117,13 +116,22 @@ const Popup = ({ data }: IProps) => {
             </div>
           </div>
         </div>
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src='/assets/background/book.webp'
-          alt=''
-          className='absolute top-0 left-0 select-none w-full h-full'
-          draggable={false}
-        />
+
+        {/* Background image */}
+        {/* Mobile */}
+        <MediaQuery maxWidth={768}>
+          <span
+            className='absolute top-0 left-0 select-none w-full h-full book-small'
+            draggable={false}
+          />
+        </MediaQuery>
+        {/* Desktop or bigger */}
+        <MediaQuery minWidth={768}>
+          <span
+            className='absolute top-0 left-0 select-none w-full h-full book-full'
+            draggable={false}
+          />
+        </MediaQuery>
       </motion.div>
     </motion.div>
   );

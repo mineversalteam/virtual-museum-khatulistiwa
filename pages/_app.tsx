@@ -32,6 +32,9 @@ function App({ Component, pageProps }: AppProps) {
           type='font/woff2'
           crossOrigin='true'
         />
+
+        <link rel='preload' as='image' href='/assets/background/book.webp' />
+        <link rel='preload' as='image' href='/assets/background/1page.webp' />
       </Head>
 
       <ViewerProvider>

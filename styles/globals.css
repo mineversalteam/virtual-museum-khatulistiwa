@@ -40,18 +40,6 @@
   box-sizing: border-box;
 }
 
-/* ::-webkit-scrollbar {
-  width: 5px;
-}
-
-::-webkit-scrollbar-track {
-  background: #B7B7B7;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #7D5235;
-} */
-
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -63,4 +51,19 @@
 
 ::-webkit-scrollbar-thumb {
   background: #7D5235;
+}
+
+.book-small,
+.book-full {
+  border-image-slice: 4 fill;
+  border-image-repeat: round;
+  border-image-width: 6px;
+}
+
+.book-small {
+  border-image-source: url('/assets/background/1page.webp');
+}
+
+.book-full {
+  border-image-source: url('/assets/background/book.webp');
 }

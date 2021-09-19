@@ -34,14 +34,20 @@ const Model = ({ url }: IProps) => {
 
   return (
     <Canvas className='filter drop-shadow-md'>
-      <PerspectiveCamera makeDefault position={[-180, 80, 180]} ref={cam} />
+      <PerspectiveCamera
+        makeDefault
+        near={1}
+        far={5000}
+        position={[-200, 80, 200]}
+        ref={cam}
+      />
       <OrbitControls
         camera={cam.current}
         enablePan={false}
         enableDamping
         dampingFactor={0.1}
         rotateSpeed={0.5}
-        maxDistance={200}
+        maxDistance={250}
         minDistance={100}
         maxPolarAngle={Math.PI / 1.6}
         minPolarAngle={Math.PI / 3}
