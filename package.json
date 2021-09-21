@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "1.2.36",
+    "@fortawesome/free-brands-svg-icons": "^5.15.4",
     "@fortawesome/free-solid-svg-icons": "5.15.4",
     "@fortawesome/react-fontawesome": "0.1.15",
     "@react-three/drei": "7.8.0",
@@ -22,11 +23,13 @@
     "react-dom": "17.0.2",
     "react-markdown": "7.0.1",
     "react-responsive": "^9.0.0-beta.4",
+    "react-slick": "^0.28.1",
     "remark-gfm": "2.0.0",
     "three": "0.132.2"
   },
   "devDependencies": {
     "@types/react": "17.0.21",
+    "@types/react-slick": "^0.23.5",
     "@types/three": "0.131.1",
     "@typescript-eslint/eslint-plugin": "4.31.1",
     "@typescript-eslint/parser": "4.31.1",

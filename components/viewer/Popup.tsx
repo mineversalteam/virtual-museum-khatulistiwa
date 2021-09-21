@@ -65,7 +65,7 @@ const Popup = ({ data }: IProps) => {
                 </p>
               </div>
 
-              <div className='flex-grow overflow-x-hidden overflow-y-auto'>
+              <div className='flex-grow overflow-x-hidden overflow-y-auto' id="content-view-desc">
                 <Markdown
                   remarkPlugins={[remarkGfm]}
                   className='font-dmSans text-lg break-word pr-4 mb-2 md:mb-0'

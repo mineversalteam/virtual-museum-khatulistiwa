@@ -1,6 +1,8 @@
 const COLORS = {
   primary: '#7D5235',
-  secondary: '#E9E1CF'
+  secondary: '#E9E1CF',
+  "primary-blue": "#0069B2",
+  "secondary-blue": "#0096FF"
 }
 
 module.exports = {
