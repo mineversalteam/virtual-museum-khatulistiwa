@@ -1,19 +1,17 @@
 import Header from './Header';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-    faCaretDown,
-} from '@fortawesome/free-solid-svg-icons';
+import { faCaretDown } from '@fortawesome/free-solid-svg-icons';
 import About from './About';
 import Join from './Join';
 import Tutorial from './Tutorial';
 import Team from './Team';
 import Footer from './Footer';
 
-const Homepage = () => {    
+const Homepage = () => {
   return (
     <div>
-        <Header/>
-        <section id='home' className='relative h-screen'>
+      <Header />
+      <section id='home' className='relative h-screen'>
         <div className='slide-show bg-scroll'></div>
         <div className='container mx-auto px-5 relative z-10'>
           <div className='h-screen flex flex-col items-center justify-center'>
@@ -36,11 +34,11 @@ const Homepage = () => {
           </a>
         </div>
       </section>
-      <About/>
-      <Join/>
-      <Team/>
-      <Tutorial/>
-      <Footer/>
+      <About />
+      <Join />
+      <Team />
+      <Tutorial />
+      <Footer />
     </div>
   );
 };
