@@ -5,7 +5,11 @@ import {
   faInstagram,
   faTwitter,
 } from '@fortawesome/free-brands-svg-icons';
-import { faCaretLeft, faCaretRight } from '@fortawesome/free-solid-svg-icons';
+import {
+  faCaretLeft,
+  faCaretRight,
+  faGlobeAmericas,
+} from '@fortawesome/free-solid-svg-icons';
 import Slider from 'react-slick';
 
 const settings = {
@@ -55,6 +59,7 @@ const Team = () => {
                     height='230px'
                     alt=''
                   ></img>
+
                   <div className='detail text-center absolute bottom-0 w-full'>
                     <button className='h-8 leading-8 mv-btn btn-blue relative top-5 font-minecraftia'>
                       {profile.nickname}
@@ -62,7 +67,7 @@ const Team = () => {
                     <div className='overlay text-white font-dmSans pt-5 pb-2'>
                       <p>{profile.role}</p>
                       <div className='sosmed flex justify-center'>
-                        {profile.sosmed.facebook && (
+                        {profile?.sosmed?.facebook && (
                           <a href={profile.sosmed.facebook}>
                             <FontAwesomeIcon
                               icon={faFacebook}
@@ -70,7 +75,7 @@ const Team = () => {
                             />
                           </a>
                         )}
-                        {profile.sosmed.instagram && (
+                        {profile?.sosmed?.instagram && (
                           <a href={profile.sosmed.instagram}>
                             <FontAwesomeIcon
                               icon={faInstagram}
@@ -78,10 +83,18 @@ const Team = () => {
                             />
                           </a>
                         )}
-                        {profile.sosmed.twitter && (
+                        {profile?.sosmed?.twitter && (
                           <a href={profile.sosmed.twitter}>
                             <FontAwesomeIcon
                               icon={faTwitter}
+                              className='w-5 m-auto text-lg cursor-pointer filter text-white drop-shadow-lg'
+                            />
+                          </a>
+                        )}
+                        {profile?.sosmed?.planetminecraft && (
+                          <a href={profile.sosmed.planetminecraft}>
+                            <FontAwesomeIcon
+                              icon={faGlobeAmericas}
                               className='w-5 m-auto text-lg cursor-pointer filter text-white drop-shadow-lg'
                             />
                           </a>
