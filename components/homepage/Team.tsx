@@ -49,10 +49,10 @@ const Team = () => {
                 <div className='item' key={i}>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
-                    className='rounded border border-1 border-black'
+                    className='rounded border border-1 border-black overflow-hidden'
                     src={profile.image}
                     width='230px'
-                    height='230'
+                    height='230px'
                     alt=''
                   ></img>
                   <div className='detail text-center absolute bottom-0 w-full'>
@@ -62,24 +62,30 @@ const Team = () => {
                     <div className='overlay text-white font-dmSans pt-5 pb-2'>
                       <p>{profile.role}</p>
                       <div className='sosmed flex justify-center'>
-                        <a href='#facebook'>
-                          <FontAwesomeIcon
-                            icon={faFacebook}
-                            className='w-5 m-auto text-lg cursor-pointer filter text-white drop-shadow-lg'
-                          />
-                        </a>
-                        <a href='#instagram'>
-                          <FontAwesomeIcon
-                            icon={faInstagram}
-                            className='w-5 m-auto text-lg cursor-pointer filter text-white drop-shadow-lg'
-                          />
-                        </a>
-                        <a href='#instagram'>
-                          <FontAwesomeIcon
-                            icon={faTwitter}
-                            className='w-5 m-auto text-lg cursor-pointer filter text-white drop-shadow-lg'
-                          />
-                        </a>
+                        {profile.sosmed.facebook && (
+                          <a href={profile.sosmed.facebook}>
+                            <FontAwesomeIcon
+                              icon={faFacebook}
+                              className='w-5 m-auto text-lg cursor-pointer filter text-white drop-shadow-lg'
+                            />
+                          </a>
+                        )}
+                        {profile.sosmed.instagram && (
+                          <a href={profile.sosmed.instagram}>
+                            <FontAwesomeIcon
+                              icon={faInstagram}
+                              className='w-5 m-auto text-lg cursor-pointer filter text-white drop-shadow-lg'
+                            />
+                          </a>
+                        )}
+                        {profile.sosmed.twitter && (
+                          <a href={profile.sosmed.twitter}>
+                            <FontAwesomeIcon
+                              icon={faTwitter}
+                              className='w-5 m-auto text-lg cursor-pointer filter text-white drop-shadow-lg'
+                            />
+                          </a>
+                        )}
                       </div>
                     </div>
                   </div>
