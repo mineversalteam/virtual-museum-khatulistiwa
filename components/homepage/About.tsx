@@ -20,12 +20,25 @@ const About = () => {
                 Indonesia yang bergerak dalam komunitas Minecraft di Indonesia.{' '}
               </p>
               <div className='pt-2'>
-                <button className='mr-4 mv-btn btn-blue font-dmSans text-xl'>
-                  Biennale Jogja
-                </button>
-                <button className='mv-btn btn-outline-blue font-dmSans text-xl'>
-                  Mivubi
-                </button>
+                <a
+                  href='https://biennalejogja.org/'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
+                  <button className='mr-4 mv-btn btn-blue font-dmSans text-xl'>
+                    Biennale Jogja
+                  </button>
+                </a>
+
+                <a
+                  href='https://minecraft-id.net/about/mivubi'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
+                  <button className='mv-btn btn-outline-blue font-dmSans text-xl'>
+                    Mivubi
+                  </button>
+                </a>
               </div>
             </div>
           </div>
