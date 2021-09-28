@@ -15,7 +15,7 @@ const Homepage = () => {
         <div className='slide-show bg-scroll'></div>
         <div className='container mx-auto px-5 relative z-10'>
           <div className='h-screen flex flex-col items-center justify-center'>
-            <p className='sub-title text-white'>
+            <p className='sub-title text-white text-center'>
               Minecraft Indonesia &times; Unibuild Indonesia &times; Riyan
               Kresnandi
             </p>
@@ -25,7 +25,7 @@ const Homepage = () => {
               alt=''
               draggable={false}
             ></img>
-            <p className='sub-title text-gray-50'>
+            <p className='sub-title text-gray-50 text-center'>
               Ketika Minecraft Bertemu Kesenian
             </p>
           </div>
