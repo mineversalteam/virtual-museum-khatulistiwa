@@ -2,8 +2,8 @@ const About = () => {
   return (
     <section id='about-museum' className='bg-black py-28'>
       <div className='container mx-auto px-5 relative z-10'>
-        <div className='grid grid-cols-2 gap-4'>
-          <div className='detail text-white'>
+        <div className='grid grid-cols-1 gap-10 md:grid-cols-2 md:gap-4'>
+          <div className='detail text-white order-1 md:order-0'>
             <div className='flex h-full justify-center flex-col'>
               <h1 className='title'>01. About Museum</h1>
               <p className='subtitle'>Virtual Museum Khatulistiwa</p>
@@ -42,7 +42,7 @@ const About = () => {
               </div>
             </div>
           </div>
-          <div className='relative'>
+          <div className='relative order-0 md:order-1'>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               className='m-auto'
