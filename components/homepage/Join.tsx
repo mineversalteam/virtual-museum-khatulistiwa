@@ -20,7 +20,7 @@ const Join = () => {
         </Link>
 
         <button
-          className='mv-btn text-3xl h-14 font-minecraftia btn-blue w-full transition duration-300 ease-in-out hover:bg-dark-blue'
+          className='mv-btn text-lg md:text-3xl h-14 font-minecraftia btn-blue w-full transition duration-300 ease-in-out hover:bg-dark-blue'
           onClick={() =>
             navigator?.clipboard?.writeText('museum.minecraft-id.net')
           }
