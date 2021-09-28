@@ -6,13 +6,11 @@ const Footer = () => {
           <h1 className='text-lg text-white font-dmSans font-medium'>
             Presented by{' '}
           </h1>
-          <div className='flex justify-center items-center pt-5'>
+          <div className='flex flex-wrap justify-center items-center pt-5'>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               alt=''
-              className='mx-5'
-              height='135px'
-              width='135px'
+              className='mx-5 p-2 h-24 w-24 md:h-32 md:w-32'              
               src='/assets/logos/mineversal.png'
               draggable={false}
             />
@@ -20,9 +18,7 @@ const Footer = () => {
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               alt=''
-              className='mx-5'
-              height='135px'
-              width='135px'
+              className='mx-5 p-2 h-24 w-24 md:h-32 md:w-32'
               src='/assets/logos/mcindo.png'
               draggable={false}
             />
@@ -30,9 +26,7 @@ const Footer = () => {
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               alt=''
-              className='mx-5'
-              height='135px'
-              width='428px'
+              className='mx-5 p-2 h-24 w-auto md:h-32'
               src='https://media.discordapp.net/attachments/445232632679235595/889901118811938816/unknown.png?width=771&height=238'
               draggable={false}
             />
@@ -40,9 +34,7 @@ const Footer = () => {
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               alt=''
-              className='mx-5'
-              height='135px'
-              width='135px'
+              className='mx-5 p-2 h-24 w-24 md:h-32 md:w-32'
               src='/assets/logos/unibuild.png'
               draggable={false}
             />
@@ -50,9 +42,7 @@ const Footer = () => {
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               alt=''
-              className='mx-5'
-              height='135px'
-              width='135px'
+              className='mx-5 p-2 h-24 w-24 md:h-32 md:w-32'
               src='https://media.discordapp.net/attachments/445232632679235595/889901867918839818/unknown.png?width=238&height=238'
               draggable={false}
             />
