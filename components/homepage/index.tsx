@@ -16,11 +16,16 @@ const Homepage = () => {
         <div className='container mx-auto px-5 relative z-10'>
           <div className='h-screen flex flex-col items-center justify-center'>
             <p className='sub-title text-white'>
-              Minecraft Indonesia x Unibuild Indonesia x Riyan Kresnandi
+              Minecraft Indonesia &times; Unibuild Indonesia &times; Riyan
+              Kresnandi
             </p>
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src='/assets/logos/red-museum-khatulistiwa.png' alt=''></img>
-            <p className='sub-title text-white'>
+            <img
+              src='/assets/logos/red-museum-khatulistiwa.png'
+              alt=''
+              draggable={false}
+            ></img>
+            <p className='sub-title text-gray-100'>
               Ketika Minecraft Bertemu Kesenian
             </p>
           </div>
@@ -29,7 +34,7 @@ const Homepage = () => {
           <a href='#about-museum'>
             <FontAwesomeIcon
               icon={faCaretDown}
-              className='w-10 m-auto text-7xl cursor-pointer filter text-white drop-shadow-lg'
+              className='w-8 m-auto text-7xl cursor-pointer filter text-white drop-shadow-lg'
             />
           </a>
         </div>

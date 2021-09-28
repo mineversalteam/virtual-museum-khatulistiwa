@@ -112,9 +112,16 @@ const Team = () => {
           <button className='mx-3 text-lg mv-btn bg-black text-white font-dmSans font-bold'>
             See Full Team
           </button>
-          <button className='mx-3 text-lg mv-btn bg-none text-black border-black border font-dmSans font-bold'>
-            About Mivubi
-          </button>
+
+          <a
+            href='https://minecraft-id.net/about/mivubi'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
+            <button className='mx-3 text-lg mv-btn bg-none text-black border-black border font-dmSans font-bold'>
+              About Mivubi
+            </button>
+          </a>
         </div>
       </div>
     </section>

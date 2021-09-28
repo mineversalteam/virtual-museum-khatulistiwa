@@ -8,7 +8,7 @@ const Join = () => {
           <p className='subtitle'>360 View & Public Minecraft Server</p>
         </div>
         <Link href='/maps' passHref>
-          <div className='bg-360 w-full flex items-center justify-center my-10'>
+          <div className='bg-360 w-full flex items-center justify-center my-10 cursor-pointer'>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src='/assets/icons/360deg.webp'
@@ -18,7 +18,7 @@ const Join = () => {
             ></img>
           </div>
         </Link>
-        <button className='mv-btn text-3xl h-14 font-minecraftia btn-blue w-full'>
+        <button className='mv-btn text-3xl h-14 font-minecraftia btn-blue w-full transition duration-300 ease-in-out hover:bg-dark-blue'>
           museum.minecraft-id.net
         </button>
       </div>

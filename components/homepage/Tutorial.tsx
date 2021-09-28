@@ -83,10 +83,10 @@ const Tutorial = () => {
               ip <mark>museum.minecraft-id.net</mark>
             </p>
             <div className='pt-2'>
-              <button className='mr-4 mv-btn btn-blue font-dmSans text-xl'>
+              <button className='mr-4 mv-btn btn-blue font-dmSans text-xl transition duration-300 ease-in-out hover:bg-dark-blue'>
                 Tutorial Offline
               </button>
-              <button className='mv-btn btn-outline-blue font-dmSans text-xl'>
+              <button className='mv-btn btn-outline-blue font-dmSans text-xl transition duration-300 ease-in-out hover:bg-secondary-blue hover:text-white'>
                 Tutorial Online
               </button>
             </div>

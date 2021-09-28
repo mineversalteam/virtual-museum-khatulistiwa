@@ -8,7 +8,7 @@ const Header = () => {
       <nav className='navbar flex justify-between items-center'>
         <div className='nav-right'>
           <Link href='/maps' passHref>
-            <button className='mv-btn btn-blue flex items-center'>
+            <button className='mv-btn btn-blue flex items-center transition duration-300 ease-in-out hover:bg-dark-blue'>
               <FontAwesomeIcon
                 icon={faEye}
                 className='w-3 cursor-pointer filter drop-shadow-lg'
