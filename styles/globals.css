@@ -137,15 +137,15 @@ mark{
 
 /* title and subtitle */
 p.sub-title{
-  @apply font-dmSans text-2xl font-bold py-4 ;
+  @apply font-dmSans md:text-2xl text-base font-bold py-4 ;
 }
 
 #homepage .title{
-  @apply font-minecraftia text-5xl;
+  @apply font-minecraftia md:text-5xl text-2xl;
 }
 
 #homepage .subtitle{
-  @apply text-secondary-blue text-xl font-dmSans font-bold; 
+  @apply text-secondary-blue md:text-xl text-base font-dmSans font-bold; 
 }
 
 #homepage .description{
