@@ -25,7 +25,7 @@ const Homepage = () => {
               alt=''
               draggable={false}
             ></img>
-            <p className='sub-title text-gray-100'>
+            <p className='sub-title text-gray-50'>
               Ketika Minecraft Bertemu Kesenian
             </p>
           </div>
