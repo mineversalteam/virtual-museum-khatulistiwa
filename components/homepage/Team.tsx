@@ -35,6 +35,22 @@ const settings = {
     </button>
   ),
   arrows: true,
+  responsive: [
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2,
+        initialSlide: 2
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }]
 };
 
 const Team = () => {
@@ -46,7 +62,7 @@ const Team = () => {
           <p className='subtitle'>360 View & Public Minecraft Server</p>
         </div>
 
-        <div id='mivubi-team' className='py-10'>
+        <div id='mivubi-team' className='py-10 px-5'>
           <Slider {...settings}>
             {data.map((profile, i) => {
               return (
@@ -61,14 +77,14 @@ const Team = () => {
                   ></img>
 
                   <div className='detail text-center absolute bottom-0 w-full'>
-                    <button className='h-8 leading-8 mv-btn btn-blue relative top-5 font-minecraftia'>
+                    <button className='h-9 mv-btn leading-0 md:h-8 btn-blue relative top-5 font-minecraftia'>
                       {profile.nickname}
                     </button>
                     <div className='overlay text-white font-dmSans pt-5 pb-2'>
                       <p>{profile.role}</p>
                       <div className='sosmed flex justify-center'>
                         {profile?.sosmed?.facebook && (
-                          <a href={profile.sosmed.facebook}>
+                          <a href={profile.sosmed.facebook} target="_blank">
                             <FontAwesomeIcon
                               icon={faFacebook}
                               className='w-5 m-auto text-lg cursor-pointer filter text-white drop-shadow-lg'
@@ -76,7 +92,7 @@ const Team = () => {
                           </a>
                         )}
                         {profile?.sosmed?.instagram && (
-                          <a href={profile.sosmed.instagram}>
+                          <a href={profile.sosmed.instagram} target="_blank">
                             <FontAwesomeIcon
                               icon={faInstagram}
                               className='w-5 m-auto text-lg cursor-pointer filter text-white drop-shadow-lg'
@@ -84,7 +100,7 @@ const Team = () => {
                           </a>
                         )}
                         {profile?.sosmed?.twitter && (
-                          <a href={profile.sosmed.twitter}>
+                          <a href={profile.sosmed.twitter} target="_blank">
                             <FontAwesomeIcon
                               icon={faTwitter}
                               className='w-5 m-auto text-lg cursor-pointer filter text-white drop-shadow-lg'
@@ -92,7 +108,7 @@ const Team = () => {
                           </a>
                         )}
                         {profile?.sosmed?.planetminecraft && (
-                          <a href={profile.sosmed.planetminecraft}>
+                          <a href={profile.sosmed.planetminecraft} target="_blank">
                             <FontAwesomeIcon
                               icon={faGlobeAmericas}
                               className='w-5 m-auto text-lg cursor-pointer filter text-white drop-shadow-lg'
@@ -109,16 +125,21 @@ const Team = () => {
         </div>
 
         <div className='text-center pt-5'>
-          <button className='mx-3 text-lg mv-btn bg-black text-white font-dmSans font-bold'>
-            See Full Team
-          </button>
-
           <a
             href='https://minecraft-id.net/about/mivubi'
             target='_blank'
             rel='noopener noreferrer'
           >
-            <button className='mx-3 text-lg mv-btn bg-none text-black border-black border font-dmSans font-bold'>
+            <button className='w-full md:w-auto md:mx-3 my-2 text-lg mv-btn bg-black text-white font-dmSans font-bold hover:opacity-80'>
+              See Full Team
+            </button>
+          </a>
+          <a
+            href='https://minecraft-id.net/about/mivubi'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
+            <button className='w-full md:w-auto md:mx-3 my-2 text-lg mv-btn bg-none text-black border-black border font-dmSans font-bold hover:bg-black hover:text-white'>
               About Mivubi
             </button>
           </a>
