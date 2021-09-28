@@ -116,7 +116,7 @@ mark{
 
 /* button */
 .mv-btn{
-  @apply py-1 px-3;
+  @apply pb-1 pt-2 px-3;
 } 
 
 .btn-blue{
