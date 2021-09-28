@@ -7,7 +7,18 @@ const COLORS = {
 }
 
 module.exports = {
-  purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
+  purge: {
+    content: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
+    options: {
+      safelist: {
+        greedy: [
+          /bg-transparent/,
+          /bg-white/,
+          /bg-black/
+        ],
+      },
+    },
+  },
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
