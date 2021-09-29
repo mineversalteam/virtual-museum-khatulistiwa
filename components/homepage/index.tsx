@@ -6,8 +6,13 @@ import Join from './Join';
 import Tutorial from './Tutorial';
 import Team from './Team';
 import Footer from './Footer';
+import { Member } from './TeamMember';
 
-const Homepage = () => {
+interface IProps {
+  team: Member[];
+}
+
+const Homepage = ({ team }: IProps) => {
   return (
     <div>
       <Header />
@@ -41,7 +46,7 @@ const Homepage = () => {
       </section>
       <About />
       <Join />
-      <Team />
+      <Team data={team} />
       <Tutorial />
       <Footer />
     </div>

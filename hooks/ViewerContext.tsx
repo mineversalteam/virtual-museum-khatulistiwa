@@ -1,6 +1,5 @@
 import { createContext, useState, useContext, useEffect } from 'react';
 import { Frustum } from 'three';
-import Maps from '@/maps.json';
 import { Vector3 } from '@react-three/fiber';
 import clamp from '@/utils/clamp';
 import State from '@/utils/state';
@@ -99,9 +98,15 @@ export interface ViewerValues {
 }
 
 export default ViewerContext;
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export const Provider = (props: any) => {
-  const [maps, setMaps] = useState<MapRegion[]>(Maps);
+
+interface IProps {
+  data: MapRegion[];
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  [key: string]: any;
+}
+
+export const Provider = ({ data, ...props }: IProps) => {
+  const [maps, setMaps] = useState<MapRegion[]>(data);
   const [activeRegion, setActiveRegion] = useState(0);
   const [activeMap, setActiveMap] = useState(0);
 
@@ -190,9 +195,11 @@ export const Provider = (props: any) => {
       return true;
     },
     nextRegion() {
+      if (activeRegion === maps.length - 1) return this.setRegion(0);
       this.setRegion(clamp(activeRegion + 1, 0, maps.length - 1));
     },
     prevRegion() {
+      if (activeRegion === 0) return this.setRegion(maps.length - 1);
       this.setRegion(clamp(activeRegion - 1, 0, maps.length - 1));
     },
     setRegion(index) {

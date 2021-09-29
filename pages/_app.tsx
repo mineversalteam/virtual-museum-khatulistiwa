@@ -1,7 +1,6 @@
 import '../styles/globals.css';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
-import { Provider as ViewerProvider } from '@/hooks/ViewerContext';
 
 function App({ Component, pageProps }: AppProps) {
   return (
@@ -85,9 +84,7 @@ function App({ Component, pageProps }: AppProps) {
         />
       </Head>
 
-      <ViewerProvider>
-        <Component {...pageProps} />
-      </ViewerProvider>
+      <Component {...pageProps} />
     </>
   );
 }

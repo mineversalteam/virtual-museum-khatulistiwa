@@ -1,8 +1,7 @@
-import data from '@/team.json';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretLeft, faCaretRight } from '@fortawesome/free-solid-svg-icons';
 import Slider from 'react-slick';
-import TeamMember from './TeamMember';
+import TeamMember, { Member } from './TeamMember';
 
 const settings = {
   dots: false,
@@ -46,7 +45,11 @@ const settings = {
   ],
 };
 
-const Team = () => {
+interface IProps {
+  data: Member[];
+}
+
+const Team = ({ data }: IProps) => {
   return (
     <section id='team' className='py-28'>
       <div className='container mx-auto px-5 relative z-10'>
