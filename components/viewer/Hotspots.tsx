@@ -24,7 +24,7 @@ const Hotspots = ({ data }: IProps) => {
           width={k?.size?.[0] ?? '50px'}
           height={k?.size?.[1] ?? '50px'}
           className={[
-            'absolute top-0 left-0 cursor-pointer transition-opacity duration-300 ease-in-out select-none filter drop-shadow-md',
+            'absolute top-0 left-0 cursor-pointer transition-opacity transition-filter duration-300 ease-in-out select-none filter drop-shadow-lg',
             data.hideHotspot ? 'pointer-events-none' : 'pointer-events-auto',
             data.hideHotspot || data.offscreened.includes(k.id)
               ? 'opacity-0'
