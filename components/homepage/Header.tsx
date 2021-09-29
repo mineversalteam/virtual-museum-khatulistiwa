@@ -21,6 +21,7 @@ const LINKS: Record<string, string> = {
 const Header = () => {
   const [activeBg, setActiveBg] = useState(0);
   const [isActive, setActive] = useState(0);
+  const [lock, setLock] = useState(false);
 
   useEffect(() => {
     const positions: number[] = [];
@@ -34,19 +35,23 @@ const Header = () => {
       positions.forEach((n) => n <= scroll && (num = n));
 
       const index = positions.indexOf(num);
-      if (isActive === 0) setActiveBg(index);
+      if (!lock) setActiveBg(index);
     };
 
     window.addEventListener('scroll', handler, true);
     return () => window.removeEventListener('scroll', handler, true);
-  }, [isActive]);
+  }, [lock]);
 
   const toggleNav = () => {
     const active = Number(!isActive);
     setActive(active);
 
-    if (active === 0) window.dispatchEvent(new Event('scroll'));
-    else if (active === 1 && activeBg === 0) setActiveBg(1);
+    if (active === 0) {
+      setLock(false);
+      return window.dispatchEvent(new Event('scroll'));
+    }
+
+    if (active === 1 && activeBg === 0) return setActiveBg(1);
   };
 
   return (

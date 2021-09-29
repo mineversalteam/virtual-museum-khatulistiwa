@@ -1,16 +1,8 @@
 import data from '@/team.json';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faFacebook,
-  faInstagram,
-  faTwitter,
-} from '@fortawesome/free-brands-svg-icons';
-import {
-  faCaretLeft,
-  faCaretRight,
-  faGlobeAmericas,
-} from '@fortawesome/free-solid-svg-icons';
+import { faCaretLeft, faCaretRight } from '@fortawesome/free-solid-svg-icons';
 import Slider from 'react-slick';
+import TeamMember from './TeamMember';
 
 const settings = {
   dots: false,
@@ -22,7 +14,7 @@ const settings = {
     <button className='text-black text-lg'>
       <FontAwesomeIcon
         icon={faCaretLeft}
-        className='w-5 cursor-pointer filter drop-shadow-lg'
+        className='w-4 cursor-pointer filter drop-shadow-lg'
       />
     </button>
   ),
@@ -30,27 +22,28 @@ const settings = {
     <button className='text-black text-lg'>
       <FontAwesomeIcon
         icon={faCaretRight}
-        className='w-5 cursor-pointer filter drop-shadow-lg'
+        className='w-4 cursor-pointer filter drop-shadow-lg'
       />
     </button>
   ),
   arrows: true,
   responsive: [
     {
-      breakpoint: 600,
+      breakpoint: 1024,
       settings: {
         slidesToShow: 2,
-        slidesToScroll: 2,
-        initialSlide: 2
-      }
+        slidesToScroll: 1,
+        initialSlide: 2,
+      },
     },
     {
-      breakpoint: 480,
+      breakpoint: 640,
       settings: {
         slidesToShow: 1,
-        slidesToScroll: 1
-      }
-    }]
+        slidesToScroll: 1,
+      },
+    },
+  ],
 };
 
 const Team = () => {
@@ -64,63 +57,9 @@ const Team = () => {
 
         <div id='mivubi-team' className='py-10 px-5'>
           <Slider {...settings}>
-            {data.map((profile, i) => {
-              return (
-                <div className='item' key={i}>
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    className='rounded border border-1 border-black overflow-hidden'
-                    src={profile.image}
-                    width='230px'
-                    height='230px'
-                    alt=''
-                  ></img>
-
-                  <div className='detail text-center absolute bottom-0 w-full'>
-                    <button className='h-9 mv-btn leading-0 md:h-8 btn-blue relative top-5 font-minecraftia'>
-                      {profile.nickname}
-                    </button>
-                    <div className='overlay text-white font-dmSans pt-5 pb-2'>
-                      <p>{profile.role}</p>
-                      <div className='sosmed flex justify-center'>
-                        {profile?.sosmed?.facebook && (
-                          <a href={profile.sosmed.facebook} target="_blank">
-                            <FontAwesomeIcon
-                              icon={faFacebook}
-                              className='w-5 m-auto text-lg cursor-pointer filter text-white drop-shadow-lg'
-                            />
-                          </a>
-                        )}
-                        {profile?.sosmed?.instagram && (
-                          <a href={profile.sosmed.instagram} target="_blank">
-                            <FontAwesomeIcon
-                              icon={faInstagram}
-                              className='w-5 m-auto text-lg cursor-pointer filter text-white drop-shadow-lg'
-                            />
-                          </a>
-                        )}
-                        {profile?.sosmed?.twitter && (
-                          <a href={profile.sosmed.twitter} target="_blank">
-                            <FontAwesomeIcon
-                              icon={faTwitter}
-                              className='w-5 m-auto text-lg cursor-pointer filter text-white drop-shadow-lg'
-                            />
-                          </a>
-                        )}
-                        {profile?.sosmed?.planetminecraft && (
-                          <a href={profile.sosmed.planetminecraft} target="_blank">
-                            <FontAwesomeIcon
-                              icon={faGlobeAmericas}
-                              className='w-5 m-auto text-lg cursor-pointer filter text-white drop-shadow-lg'
-                            />
-                          </a>
-                        )}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
+            {data.map((profile, i) => (
+              <TeamMember key={i} profile={profile} />
+            ))}
           </Slider>
         </div>
 
@@ -131,16 +70,7 @@ const Team = () => {
             rel='noopener noreferrer'
           >
             <button className='w-full md:w-auto md:mx-3 my-2 text-lg mv-btn bg-black text-white font-dmSans font-bold hover:opacity-80'>
-              See Full Team
-            </button>
-          </a>
-          <a
-            href='https://minecraft-id.net/about/mivubi'
-            target='_blank'
-            rel='noopener noreferrer'
-          >
-            <button className='w-full md:w-auto md:mx-3 my-2 text-lg mv-btn bg-none text-black border-black border font-dmSans font-bold hover:bg-black hover:text-white'>
-              About Mivubi
+              Learn More
             </button>
           </a>
         </div>
