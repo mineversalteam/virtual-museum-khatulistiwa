@@ -42,7 +42,7 @@ const About = () => {
               </div>
             </div>
           </div>
-          <div className='relative order-0 md:order-1'>
+          <div className='relative order-0 md:order-1 transition duration-300 ease-in-out transform hover:scale-105'>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               className='m-auto'
@@ -50,6 +50,7 @@ const About = () => {
               height='596px'
               alt=''
               src='https://media.discordapp.net/attachments/445232632679235595/889818744422027264/unknown.png?width=425&height=559'
+              draggable={false}
             ></img>
           </div>
         </div>

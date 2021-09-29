@@ -34,7 +34,7 @@ const Homepage = () => {
           <a href='#about-museum'>
             <FontAwesomeIcon
               icon={faCaretDown}
-              className='w-8 m-auto text-7xl cursor-pointer filter text-white drop-shadow-lg'
+              className='w-6 lg:w-8 m-auto text-7xl cursor-pointer filter text-white drop-shadow-lg'
             />
           </a>
         </div>

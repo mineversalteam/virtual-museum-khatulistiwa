@@ -10,7 +10,7 @@ const Footer = () => {
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               alt=''
-              className='mx-5 p-2 h-24 w-24 md:h-32 md:w-32'              
+              className='mx-5 p-2 h-24 w-24 md:h-32 md:w-32'
               src='/assets/logos/mineversal.png'
               draggable={false}
             />
