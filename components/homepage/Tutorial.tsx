@@ -1,76 +1,31 @@
+import TutorialIcon from './TutorialIcon';
+
+const IMAGES: Record<string, string> = {
+  'Install Minecraft':
+    'https://media.discordapp.net/attachments/854941249831043082/889836738393026560/unknown.png?width=1080&height=276',
+  'Go to Multiplayer':
+    'https://media.discordapp.net/attachments/445232632679235595/889896106853564466/unknown.png?width=900&height=207',
+  'Add Server':
+    'https://media.discordapp.net/attachments/445232632679235595/889896522756522064/unknown.png?width=913&height=220',
+  'Join Server':
+    'https://media.discordapp.net/attachments/445232632679235595/889897481276645426/unknown.png?width=1010&height=232',
+};
+
 const Tutorial = () => {
   return (
     <section id='tutorial' className='bg-black py-28'>
       <div className='container mx-auto px-5 relative z-10'>
         <div className='grid grid-cols-1 md:grid-cols-2'>
           <div className='grid grid-cols-1 gap-y-6 pr-0 md:pr-10 order-0 md:order-1'>
-            <a href='#'>
-              <div
-                className='relative flex items-center justify-center w-full h-28 border border-white bg-white rounded bg-cover bg-center'
-                style={{
-                  backgroundImage:
-                    'linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url(https://media.discordapp.net/attachments/854941249831043082/889836738393026560/unknown.png?width=1080&height=276)',
-                }}
-              >
-                <h1 className='absolute top-10 left-5 font-minecraftia text-white opacity-70 text-xl md:text-6xl'>
-                  01
-                </h1>
-                <h1 className='text-2xl md:text-5xl font-dmSans font-bold text-center text-white'>
-                  Install Minecraft
-                </h1>
-              </div>
-            </a>
-
-            <a href='#'>
-              <div
-                className='relative flex items-center justify-center w-full h-28  border border-white bg-white rounded bg-cover bg-center'
-                style={{
-                  backgroundImage:
-                    'linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url(https://media.discordapp.net/attachments/445232632679235595/889896106853564466/unknown.png?width=900&height=207)',
-                }}
-              >
-                <h1 className='absolute top-10 left-5 font-minecraftia text-white opacity-70 text-lg md:text-6xl'>
-                  02
-                </h1>
-                <h1 className='text-2xl md:text-5xl font-dmSans font-bold text-center text-white'>
-                  Go to multiplayer
-                </h1>
-              </div>
-            </a>
-
-            <a href='#'>
-              <div
-                className='relative flex items-center justify-center w-full h-28  border border-white bg-white rounded bg-cover bg-center'
-                style={{
-                  backgroundImage:
-                    'linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url(https://media.discordapp.net/attachments/445232632679235595/889896522756522064/unknown.png?width=913&height=220)',
-                }}
-              >
-                <h1 className='absolute top-10 left-5 font-minecraftia text-white opacity-70 text-xl md:text-6xl'>
-                  03
-                </h1>
-                <h1 className='text-2xl md:text-5xl font-dmSans font-bold text-center text-white'>
-                  Add server
-                </h1>
-              </div>
-            </a>
-
-            <a href='#'>
-              <div
-                className='relative flex items-center justify-center w-full h-28  border border-white bg-white rounded bg-cover bg-center'
-                style={{
-                  backgroundImage:
-                    'linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url(https://media.discordapp.net/attachments/445232632679235595/889897481276645426/unknown.png?width=1010&height=232)',
-                }}
-              >
-                <h1 className='absolute top-10 left-5 font-minecraftia text-white opacity-70 text-xl md:text-6xl'>
-                  04
-                </h1>
-                <h1 className='text-2xl md:text-5xl font-dmSans font-bold text-center text-white'>
-                  Join Server
-                </h1>
-              </div>
-            </a>
+            {Object.keys(IMAGES).map((k, i) => (
+              <TutorialIcon
+                key={i}
+                text={k}
+                url='#'
+                background={IMAGES[k]}
+                index={(i + 1).toString().padStart(2, '0')}
+              />
+            ))}
           </div>
           <div className='flex flex-col h-100 justify-center text-white pt-10 md:pt-0 md:pl-10 order-1 md:order-0'>
             <h1 className='title'>Tutorials Offline</h1>
