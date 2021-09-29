@@ -181,3 +181,32 @@ p.sub-title{
   display: flex !important;
   justify-content: center !important;
 }
+
+/* Markdown */
+.markdown ol {
+  list-style: decimal;
+}
+
+.markdown h1 {
+  @apply text-5xl mb-4;
+}
+
+.markdown h2 {
+  @apply text-4xl mb-4;
+}
+
+.markdown h3 {
+  @apply text-3xl mb-4;
+}
+
+.markdown h4 {
+  @apply text-2xl mb-4;
+}
+
+.markdown h5 {
+  @apply text-xl mb-4;
+}
+
+.markdown h6 {
+  @apply text-lg mb-4;
+}

@@ -1,4 +1,7 @@
 import TutorialIcon from './TutorialIcon';
+import { useState, useEffect } from 'react';
+import Markdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 
 const IMAGES: Record<string, string> = {
   'Install Minecraft':
@@ -12,6 +15,28 @@ const IMAGES: Record<string, string> = {
 };
 
 const Tutorial = () => {
+  const [showFull, setShowFull] = useState(false);
+  const [tutorial, setTutorial] = useState('');
+
+  useEffect(() => {
+    if (showFull) {
+      const link = document.createElement('a');
+      link.href = '#full-tutorial';
+      link.click();
+    }
+  }, [showFull]);
+
+  useEffect(() => {
+    Promise.resolve().then(async () => {
+      try {
+        const tutorial = await fetch('/TUTORIAL.md').then((r) => r.text());
+        setTutorial(tutorial);
+      } catch (e) {
+        console.error(e);
+      }
+    });
+  }, []);
+
   return (
     <section id='tutorial' className='bg-black py-28'>
       <div className='container mx-auto px-5 relative z-10'>
@@ -28,7 +53,7 @@ const Tutorial = () => {
             ))}
           </div>
           <div className='flex flex-col h-100 justify-center text-white pt-10 md:pt-0 md:pl-10 order-1 md:order-0'>
-            <h1 className='title'>Tutorials Offline</h1>
+            <h1 className='title'>Tutorial</h1>
             <p className='subtitle'>How to play this maps</p>
             <p className='description py-7'>
               Tutorial berikut diperuntukan untuk kamu yang ingin mengaksesnya
@@ -44,13 +69,37 @@ const Tutorial = () => {
                 </button>
               </a>
 
-              <button className='w-full mt-5 md:mt-0 md:w-auto mv-btn btn-outline-blue font-dmSans text-xl transition duration-300 ease-in-out hover:bg-secondary-blue hover:text-white'>
+              <button
+                className='w-full mt-5 md:mt-0 md:w-auto mv-btn btn-outline-blue font-dmSans text-xl transition duration-300 ease-in-out hover:bg-secondary-blue hover:text-white'
+                onClick={() => setShowFull(!showFull)}
+              >
                 Full Tutorial
               </button>
             </div>
           </div>
         </div>
       </div>
+
+      {showFull && (
+        <div
+          id='full-tutorial'
+          className='container text-white mx-auto px-5 relative z-10 mt-36'
+        >
+          <h1 className='text-6xl font-minecraftia font-semibold'>
+            Full Tutorial
+          </h1>
+
+          <div className='w-full flex justify-center p-8 text-gray-50'>
+            {/* Change content on /public/TUTORIAL.md */}
+            <Markdown
+              remarkPlugins={[remarkGfm]}
+              className='markdown font-dmSans text-xl break-word'
+            >
+              {tutorial}
+            </Markdown>
+          </div>
+        </div>
+      )}
     </section>
   );
 };
