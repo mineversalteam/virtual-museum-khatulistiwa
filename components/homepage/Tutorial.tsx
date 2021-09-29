@@ -43,6 +43,10 @@ const Tutorial = () => {
                   Video Tutorial
                 </button>
               </a>
+
+              <button className='w-full mt-5 md:mt-0 md:w-auto mv-btn btn-outline-blue font-dmSans text-xl transition duration-300 ease-in-out hover:bg-secondary-blue hover:text-white'>
+                Full Tutorial
+              </button>
             </div>
           </div>
         </div>

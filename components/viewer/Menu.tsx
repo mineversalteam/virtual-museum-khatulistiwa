@@ -1,9 +1,14 @@
 import { ViewerValues } from '@/hooks/ViewerContext';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCaretLeft, faCaretRight } from '@fortawesome/free-solid-svg-icons';
+import {
+  faCaretLeft,
+  faCaretRight,
+  faHome,
+} from '@fortawesome/free-solid-svg-icons';
 import { motion } from 'framer-motion';
-import { createContext, useState, useContext, useEffect } from 'react';
+import React, { createContext, useState, useContext, useEffect } from 'react';
 import State from '@/utils/state';
+import Link from 'next/link';
 
 const MenuContext = createContext({});
 
@@ -29,6 +34,18 @@ const Expanded = () => {
         expanded ? 'pointer-events-auto' : 'pointer-events-none',
       ].join(' ')}
     >
+      <Link href='/' passHref>
+        <button className='absolute left-4 top-6 mv-btn btn-blue flex items-center transition duration-300 ease-in-out hover:bg-dark-blue'>
+          <FontAwesomeIcon
+            icon={faHome}
+            className='w-3 cursor-pointer filter drop-shadow-lg'
+          />
+          <span className='font-minecraftia pl-3 md:mb-0 relative'>
+            Go Back
+          </span>
+        </button>
+      </Link>
+
       <span
         className='absolute right-4 top-6 cursor-pointer font-minecraftia text-4xl'
         onClick={() => setExpanded(false)}
