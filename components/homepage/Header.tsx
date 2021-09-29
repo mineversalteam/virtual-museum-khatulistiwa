@@ -10,10 +10,17 @@ const COLORS = [
   ['bg-white', 'text-black'],
   ['bg-black', 'text-white'],
 ];
-const NAV = ["hidden","block"]
+const NAV = ['hidden', 'block'];
+const LINKS: Record<string, string> = {
+  Home: '#',
+  'About Project': '#about-museum',
+  'Map Makers': '#team',
+  Tutorials: '#tutorial',
+};
 
 const Header = () => {
   const [activeBg, setActiveBg] = useState(0);
+  const [isActive, setActive] = useState(0);
 
   useEffect(() => {
     const positions: number[] = [];
@@ -27,23 +34,20 @@ const Header = () => {
       positions.forEach((n) => n <= scroll && (num = n));
 
       const index = positions.indexOf(num);
-      setActiveBg(index);
+      if (isActive === 0) setActiveBg(index);
     };
 
-    window.addEventListener('scroll', handler);
-    return () => window.removeEventListener('scroll', handler);
-  }, []);
+    window.addEventListener('scroll', handler, true);
+    return () => window.removeEventListener('scroll', handler, true);
+  }, [isActive]);
 
-
-  const [isActive, setActive] = useState(0);
   const toggleNav = () => {
-    if(isActive==1){
-      setActive(0);    
-    }else{
-      setActive(1);    
-    }    
+    const active = Number(!isActive);
+    setActive(active);
+
+    if (active === 0) window.dispatchEvent(new Event('scroll'));
+    else if (active === 1 && activeBg === 0) setActiveBg(1);
   };
-  
 
   return (
     <div
@@ -60,43 +64,31 @@ const Header = () => {
                 icon={faEye}
                 className='w-3 cursor-pointer filter drop-shadow-lg'
               />
-              <span className='font-minecraftia pl-3 mb-3 md:mb-0 relative'>3D Viewer</span>
+              <span className='font-minecraftia pl-3 md:mb-0 relative'>
+                3D Viewer
+              </span>
             </button>
           </Link>
         </div>
-        <button
-          onClick={toggleNav}
-        >
+        <button onClick={toggleNav}>
           <FontAwesomeIcon
             icon={faBars}
-            className={`w-5 cursor-pointer block md:hidden filter drop-shadow-lg ${COLORS[activeBg][1]}`}
+            className={`w-5 cursor-pointer block lg:hidden filter drop-shadow-lg ${COLORS[activeBg][1]}`}
           />
         </button>
-        <div className={`${NAV[isActive]} fixed py-10 left-0 z-0 right-0 top-20 nav-left flex-wrap flex-col flex items-center md:relative md:top-0 md:block md:flex-row md:block md:bg-transparent ${COLORS[activeBg][0]}`} id="navigation-list">
-          <a
-            className={`nav-item cursor-pointer ${COLORS[activeBg][1]}`}
-            href='#'
-          >
-            Home
-          </a>
-          <a
-            className={`nav-item cursor-pointer ${COLORS[activeBg][1]}`}
-            href='#about-museum'
-          >
-            About Project
-          </a>
-          <a
-            className={`nav-item cursor-pointer ${COLORS[activeBg][1]}`}
-            href='#team'
-          >
-            Map Makers
-          </a>
-          <a
-            className={`nav-item cursor-pointer ${COLORS[activeBg][1]}`}
-            href='#tutorial'
-          >
-            Tutorials
-          </a>
+        <div
+          className={`${NAV[isActive]} fixed py-8 left-0 z-0 right-0 top-20 nav-left flex-wrap flex-col flex items-center lg:py-0 lg:relative lg:top-0 lg:block lg:flex-row lg:block lg:bg-transparent ${COLORS[activeBg][0]}`}
+          id='navigation-list'
+        >
+          {Object.keys(LINKS).map((k, i) => (
+            <a
+              className={`select-none nav-item cursor-pointer leading-10 mb-4 lg:mb-0 ${COLORS[activeBg][1]} filter drop-shadow transition duration-300 ease-in-out hover:text-secondary-blue`}
+              href={LINKS[k]}
+              key={i}
+            >
+              {k}
+            </a>
+          ))}
         </div>
       </nav>
     </div>

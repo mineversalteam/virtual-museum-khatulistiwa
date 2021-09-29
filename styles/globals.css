@@ -111,12 +111,12 @@ mark{
 /* navigation */
 
 .nav-item{
-  @apply px-2 font-minecraftia leading-8 h-5;
+  @apply px-2 font-minecraftia;
 }
 
 /* button */
 .mv-btn{
-  @apply pb-1 pt-2 px-3;
+  @apply py-2 px-3;
 } 
 
 .btn-blue{

@@ -14,7 +14,9 @@ module.exports = {
         greedy: [
           /bg-transparent/,
           /bg-white/,
-          /bg-black/
+          /bg-black/,
+          /hidden/,
+          /block/
         ],
       },
     },
