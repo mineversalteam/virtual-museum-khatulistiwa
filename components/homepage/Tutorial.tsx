@@ -30,9 +30,10 @@ const Tutorial = () => {
     Promise.resolve().then(async () => {
       try {
         const tutorial = await fetch('/TUTORIAL.md').then((r) => r.text());
-        setTutorial(tutorial);
+        return setTutorial(tutorial);
       } catch (e) {
-        console.error(e);
+        // eslint-disable-next-line no-console
+        return console.error(e);
       }
     });
   }, []);
