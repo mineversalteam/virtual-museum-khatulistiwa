@@ -29,7 +29,7 @@ const Tutorial = () => {
           </div>
           <div className='flex flex-col h-100 justify-center text-white pt-10 md:pt-0 md:pl-10 order-1 md:order-0'>
             <h1 className='title'>Tutorials Offline</h1>
-            <p className='subtitle'>How to playing this maps</p>
+            <p className='subtitle'>How to play this maps</p>
             <p className='description py-7'>
               Tutorial berikut diperuntukan untuk kamu yang ingin mengaksesnya
               melalui offline dengan menekan setiap step ya!, namun jika kamu
@@ -38,12 +38,11 @@ const Tutorial = () => {
               ip <mark>museum.minecraft-id.net</mark>
             </p>
             <div className='pt-2'>
-              <button className='w-full mt-2 md:mt-0 md:w-auto mr-4 mv-btn btn-blue font-dmSans text-xl transition duration-300 ease-in-out hover:bg-dark-blue'>
-                Tutorial Offline
-              </button>
-              <button className='w-full mt-5 md:mt-0 md:w-auto mv-btn btn-outline-blue font-dmSans text-xl transition duration-300 ease-in-out hover:bg-secondary-blue hover:text-white'>
-                Tutorial Online
-              </button>
+              <a href='#' target='_blank' rel='noreferrer noopener'>
+                <button className='w-full mt-2 md:mt-0 md:w-auto mr-4 mv-btn btn-blue font-dmSans text-xl transition duration-300 ease-in-out hover:bg-dark-blue'>
+                  Video Tutorial
+                </button>
+              </a>
             </div>
           </div>
         </div>

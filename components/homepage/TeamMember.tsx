@@ -49,7 +49,7 @@ const TeamMember = ({ profile }: IProps) => {
               <a
                 href={profile.sosmed.facebook}
                 target='_blank'
-                rel='noreferrer'
+                rel='noreferrer noopener'
               >
                 <FontAwesomeIcon
                   icon={faFacebook}
@@ -61,7 +61,7 @@ const TeamMember = ({ profile }: IProps) => {
               <a
                 href={profile.sosmed.instagram}
                 target='_blank'
-                rel='noreferrer'
+                rel='noreferrer noopener'
               >
                 <FontAwesomeIcon
                   icon={faInstagram}
@@ -70,7 +70,11 @@ const TeamMember = ({ profile }: IProps) => {
               </a>
             )}
             {profile?.sosmed?.twitter && (
-              <a href={profile.sosmed.twitter} target='_blank' rel='noreferrer'>
+              <a
+                href={profile.sosmed.twitter}
+                target='_blank'
+                rel='noreferrer noopener'
+              >
                 <FontAwesomeIcon
                   icon={faTwitter}
                   className='w-5 m-auto text-lg cursor-pointer filter text-white drop-shadow-lg'
@@ -81,7 +85,7 @@ const TeamMember = ({ profile }: IProps) => {
               <a
                 href={profile.sosmed.planetminecraft}
                 target='_blank'
-                rel='noreferrer'
+                rel='noreferrer noopener'
               >
                 <FontAwesomeIcon
                   icon={faGlobeAmericas}
