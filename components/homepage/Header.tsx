@@ -58,7 +58,7 @@ const Header = () => {
     <div
       className={[
         'fixed w-full px-10 py-5 z-20  md:px-24 transition duration-300 ease-in-out',
-        COLORS[activeBg][0],
+        COLORS[activeBg]?.[0],
       ].join(' ')}
     >
       <nav className='navbar flex justify-between items-center'>
@@ -78,16 +78,16 @@ const Header = () => {
         <button onClick={toggleNav}>
           <FontAwesomeIcon
             icon={faBars}
-            className={`w-5 cursor-pointer block lg:hidden filter drop-shadow-lg ${COLORS[activeBg][1]}`}
+            className={`w-5 cursor-pointer block lg:hidden filter drop-shadow-lg ${COLORS[activeBg]?.[1]}`}
           />
         </button>
         <div
-          className={`${NAV[isActive]} fixed py-8 left-0 z-0 right-0 top-20 nav-left flex-wrap flex-col flex items-center lg:py-0 lg:relative lg:top-0 lg:block lg:flex-row lg:block lg:bg-transparent ${COLORS[activeBg][0]}`}
+          className={`${NAV?.[isActive]} fixed py-8 left-0 z-0 right-0 top-20 nav-left flex-wrap flex-col flex items-center lg:py-0 lg:relative lg:top-0 lg:block lg:flex-row lg:block lg:bg-transparent ${COLORS[activeBg][0]}`}
           id='navigation-list'
         >
           {Object.keys(LINKS).map((k, i) => (
             <a
-              className={`select-none nav-item cursor-pointer leading-10 mb-4 lg:mb-0 ${COLORS[activeBg][1]} filter drop-shadow transition duration-300 ease-in-out hover:text-secondary-blue`}
+              className={`select-none nav-item cursor-pointer leading-10 mb-4 lg:mb-0 ${COLORS[activeBg]?.[1]} filter drop-shadow transition duration-300 ease-in-out hover:text-secondary-blue`}
               href={LINKS[k]}
               key={i}
             >
