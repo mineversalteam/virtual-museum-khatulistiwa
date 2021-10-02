@@ -1,0 +1,98 @@
+[
+  {
+    "id": "0",
+    "region": "Jawa",
+    "maps": [
+      {
+        "id": "at-village",
+        "name": "Village",
+        "hotspots": [
+          {
+            "position": [15000, -3500, 2800],
+            "name": "test",
+            "id": "info-test",
+            "info": {
+              "title": "Halo",
+              "subtitle": "Gan",
+              "description": "**Lorem ipsum dolor sit amet**, *consectetur adipiscing elit*, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Donec ultrices tincidunt arcu non sodales neque sodales ut etiam. Elementum facilisis leo vel fringilla. Massa tincidunt nunc pulvinar sapien et ligula ullamcorper. Adipiscing elit pellentesque habitant morbi tristique. Odio ut sem nulla pharetra. Ullamcorper velit sed ullamcorper morbi tincidunt ornare massa eget. Libero enim sed faucibus turpis. Ut morbi tincidunt augue interdum velit euismod in pellentesque massa. Tristique magna sit amet purus gravida quis blandit turpis. Quam viverra orci sagittis eu. Diam in arcu cursus euismod quis viverra nibh cras.",
+              "media": {
+                "type": "model",
+                "url": "./assets/skybox/random/model/test.glb"
+              }
+            }
+          },
+          {
+            "position": [4000, -3000, 6000],
+            "name": "info",
+            "id": "info-test2",
+            "size": ["60px", "60px"],
+            "info": {
+              "title": "Wa",
+              "subtitle": "woooo",
+              "description": "anjay pizza",
+              "media": {
+                "type": "image",
+                "url": "https://i.imgur.com/0xgVI74.jpeg"
+              }
+            }
+          }
+        ],
+        "texture": [
+          "./assets/skybox/random/front.webp",
+          "./assets/skybox/random/back.webp",
+          "./assets/skybox/random/top.webp",
+          "./assets/skybox/random/bottom.webp",
+          "./assets/skybox/random/left.webp",
+          "./assets/skybox/random/right.webp"
+        ]
+      },
+      {
+        "id": "th-mansion",
+        "name": "Bruh Mansion",
+        "hotspots": [],
+        "texture": [
+          "./assets/skybox/garden/front.webp",
+          "./assets/skybox/garden/back.webp",
+          "./assets/skybox/garden/top.webp",
+          "./assets/skybox/garden/bottom.webp",
+          "./assets/skybox/garden/left.webp",
+          "./assets/skybox/garden/right.webp"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "1",
+    "region": "Thailand",
+    "maps": [
+      {
+        "id": "th-mansion",
+        "name": "Mansion",
+        "hotspots": [
+          {
+            "position": [15000, -10500, -13200],
+            "name": "nom",
+            "id": "info-anjaymakan",
+            "info": {
+              "title": "Shesh",
+              "subtitle": "lol",
+              "description": "makan",
+              "media": {
+                "type": "video",
+                "url": "https://i.imgur.com/F5wuUFA.mp4"
+              }
+            }
+          }
+        ],
+        "texture": [
+          "./assets/skybox/garden/front.webp",
+          "./assets/skybox/garden/back.webp",
+          "./assets/skybox/garden/top.webp",
+          "./assets/skybox/garden/bottom.webp",
+          "./assets/skybox/garden/left.webp",
+          "./assets/skybox/garden/right.webp"
+        ]
+      }
+    ]
+  }
+]
