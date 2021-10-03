@@ -33,6 +33,11 @@ const Homepage = ({ team }: IProps) => {
             <p className='sub-title text-gray-50 text-center'>
               Ketika Minecraft Bertemu Kesenian
             </p>
+            <div className="pt-5">
+                <button className='font-bold mv-btn btn-blue flex items-center transition duration-300 ease-in-out hover:bg-dark-blue'>
+                  Get Ticket
+                </button>
+            </div>
           </div>
         </div>
         <div className='text-center bottom-2 absolute w-full z-10'>
