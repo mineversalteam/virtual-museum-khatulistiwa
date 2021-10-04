@@ -64,7 +64,11 @@ const Tutorial = () => {
               ip <mark>museum.minecraft-id.net</mark>
             </p>
             <div className='pt-2'>
-              <a href='#' target='_blank' rel='noreferrer noopener'>
+              <a
+                href='https://minecraft-id.net/tutorial/museum'
+                target='_blank'
+                rel='noreferrer noopener'
+              >
                 <button className='w-full mt-2 md:mt-0 md:w-auto mr-4 mv-btn btn-blue font-dmSans text-xl transition duration-300 ease-in-out hover:bg-dark-blue'>
                   Video Tutorial
                 </button>

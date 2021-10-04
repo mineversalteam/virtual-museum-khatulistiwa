@@ -14,6 +14,7 @@ const NAV = ['hidden', 'block'];
 const LINKS: Record<string, string> = {
   Home: '#',
   'About Project': '#about-museum',
+  'Get Ticket': 'https://minecraft-id.net/ticket',
   'Map Makers': '#team',
   Tutorials: '#tutorial',
 };
