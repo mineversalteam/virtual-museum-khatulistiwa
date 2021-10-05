@@ -47,7 +47,6 @@ const Tutorial = () => {
               <TutorialIcon
                 key={i}
                 text={k}
-                url='#'
                 background={IMAGES[k]}
                 index={(i + 1).toString().padStart(2, '0')}
               />
