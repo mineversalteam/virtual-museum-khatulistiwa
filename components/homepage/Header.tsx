@@ -16,7 +16,7 @@ const LINKS: Record<string, string> = {
   'About Project': '#about-museum',
   'Get Ticket': 'https://minecraft-id.net/ticket',
   'Map Makers': '#team',
-  Contact: "mailto:mineversalteam@gmail.com",
+  Contact: 'mailto:mineversalteam@gmail.com',
   Tutorials: '#tutorial',
 };
 

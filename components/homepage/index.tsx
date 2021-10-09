@@ -34,7 +34,7 @@ const Homepage = ({ team }: IProps) => {
               Ketika Minecraft Bertemu Kesenian
             </p>
             <div className='pt-5'>
-              <a href="https://minecraft-id.net/ticket">
+              <a href='https://minecraft-id.net/ticket'>
                 <button className='font-bold mv-btn btn-blue flex items-center transition duration-300 ease-in-out hover:bg-dark-blue'>
                   Get Ticket
                 </button>
