@@ -60,7 +60,7 @@ const Tutorial = () => {
               melalui offline dengan menekan setiap step ya!, namun jika kamu
               ingin mengunjunginya secara online kamu dapat mengikuti step 1 dan
               membuka menu multiplayer saat pada game dan menambah server dengan
-              ip <mark>museum.minecraft-id.net</mark>
+              ip <mark>museumkhatulistiwa.minecraft-id.net</mark>
             </p>
             <div className='pt-2'>
               <a
