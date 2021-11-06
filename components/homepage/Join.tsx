@@ -25,7 +25,7 @@ const Join = () => {
             navigator?.clipboard?.writeText('museum.minecraft-id.net')
           }
         >
-          museum.minecraft-id.net
+          museumkhatulistiwa.minecraft-id.net
         </button>
       </div>
     </section>
