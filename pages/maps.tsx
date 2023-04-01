@@ -13,7 +13,7 @@ const Home = ({ maps }: IProps) => {
   );
 };
 
-export const getServerSideProps = async ({ req }) => {  
+export const getServerSideProps = async ({ req }: any) => {  
   const protocol = req.headers['x-forwarded-proto'] || 'http'
   const baseUrl = req ? `${protocol}://${req.headers.host}` : ''
   const [maps] = await Promise.all([
