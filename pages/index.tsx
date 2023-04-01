@@ -13,9 +13,12 @@ const Home = ({ team }: IProps) => {
   );
 };
 
-export const getServerSideProps = async () => {
+export const getServerSideProps = async ({ req }) => {
+  const protocol = req.headers['x-forwarded-proto'] || 'http'
+  const baseUrl = req ? `${protocol}://${req.headers.host}` : ''
+
   const [team] = await Promise.all([
-    fetch('https://api.minecraft-id.net/museum/?data=team').then((res) =>
+    fetch(baseUrl + '/data/team.json').then((res) =>
       res.json()
     ),
   ]);

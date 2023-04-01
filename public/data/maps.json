@@ -1,0 +1,87 @@
+[
+  {
+    "id": "0",
+    "region": "South East Asia",
+    "maps": [
+      {
+        "id": "Spawn",
+        "name": "Spawn",
+        "hotspots": [
+        ],
+        "texture": [
+          "https://media.discordapp.net/attachments/893896709602685028/896730744200757308/spawn_front.webp",
+          "https://media.discordapp.net/attachments/893896709602685028/896730900652515368/spawn_back.webp",
+          "https://media.discordapp.net/attachments/893896709602685028/896734039979982908/spawn_top.webp",
+          "https://media.discordapp.net/attachments/893896709602685028/896730869644005396/spawn_bottom.webp",
+          "https://media.discordapp.net/attachments/893896709602685028/896730888090583140/spawn_left.webp",
+          "https://media.discordapp.net/attachments/893896709602685028/896730892469411850/spawn_right.webp"
+        ]
+      },
+      {
+        "id": "IpehNur",
+        "name": "Pusar - Ipeh Nur ",
+        "hotspots": [],
+        "texture": [
+          "https://media.discordapp.net/attachments/445232632679235595/901595378183450634/IpehNur_front.png",
+          "https://media.discordapp.net/attachments/445232632679235595/901595326002110574/IpehNur_back.png",
+          "https://media.discordapp.net/attachments/445232632679235595/901597758815891497/IpehNur_up.png",
+          "https://media.discordapp.net/attachments/445232632679235595/901595281043390535/IpehNur_down.png",
+          "https://media.discordapp.net/attachments/445232632679235595/901595415676342322/IpehNur_left.png",
+          "https://media.discordapp.net/attachments/445232632679235595/901595420650786847/IpehNur_right.png"
+        ]
+      },
+      {
+        "id": "YimYenSum",
+        "name": "Smong - Yim Yen Sum",
+        "hotspots": [],
+        "texture": [
+          "https://media.discordapp.net/attachments/445232632679235595/901615562927517756/Yim_Yen_Sum_right.png",
+          "https://media.discordapp.net/attachments/445232632679235595/901615565809004544/Yim_Yen_Sum_left.png",
+          "https://media.discordapp.net/attachments/445232632679235595/901617268285403227/Yim_Yen_Sum_up.png",
+          "https://media.discordapp.net/attachments/445232632679235595/901617843668389909/Yim_Yen_Sum_down.png",
+          "https://media.discordapp.net/attachments/445232632679235595/901615555969187930/Yim_Yen_Sum_front.png",
+          "https://media.discordapp.net/attachments/445232632679235595/901615512713297990/Yim_Yen_Sum_back.png"
+        ]
+      },
+      {
+        "id": "Bounpaul",
+        "name": "Namtaopoung - Bounpaul",
+        "hotspots": [],
+        "texture": [
+          "https://media.discordapp.net/attachments/445232632679235595/901621949812342884/Bounpaul_front.png",
+          "https://media.discordapp.net/attachments/445232632679235595/901621951779459132/Bounpaul_back.png",
+          "https://media.discordapp.net/attachments/445232632679235595/901626450992562176/Bounpaul_up.png",
+          "https://media.discordapp.net/attachments/445232632679235595/901626422290939904/Bounpaul_down.png",
+          "https://media.discordapp.net/attachments/445232632679235595/901621943873183754/Bounpaul_left.png",
+          "https://media.discordapp.net/attachments/445232632679235595/901621912713699368/Bounpaul_right.png"
+        ]
+      },
+      {
+        "id": "MRidwanAlimudinTacTic",
+        "name": "Mengandung Plastik - M. Ridwan Alimudin + TacTic",
+        "hotspots": [],
+        "texture": [
+          "https://media.discordapp.net/attachments/445232632679235595/901615562927517756/Yim_Yen_Sum_right.png",
+          "https://media.discordapp.net/attachments/445232632679235595/901615565809004544/Yim_Yen_Sum_left.png",
+          "https://media.discordapp.net/attachments/445232632679235595/901617268285403227/Yim_Yen_Sum_up.png",
+          "https://media.discordapp.net/attachments/445232632679235595/901617843668389909/Yim_Yen_Sum_down.png",
+          "https://media.discordapp.net/attachments/445232632679235595/901615555969187930/Yim_Yen_Sum_front.png",
+          "https://media.discordapp.net/attachments/445232632679235595/901615512713297990/Yim_Yen_Sum_back.png"
+        ]
+      },
+      {
+        "id": "CitraSasmita",
+        "name": "The Embrace of My Motherland - Citra Sasmita",
+        "hotspots": [],
+        "texture": [
+          "https://media.discordapp.net/attachments/445232632679235595/901625234518589440/CitraSasmita_front.png",
+          "https://media.discordapp.net/attachments/445232632679235595/901625147910393916/CitraSasmita_back.png",
+          "https://media.discordapp.net/attachments/445232632679235595/901627524575031406/CitraSasmita_up.png",
+          "https://media.discordapp.net/attachments/445232632679235595/901627478479626281/CitraSasmita_down.png",
+          "https://media.discordapp.net/attachments/445232632679235595/901625232815689778/CitraSasmita_left.png",
+          "https://media.discordapp.net/attachments/445232632679235595/901625239111360532/CitraSasmita_right.png"
+        ]
+      }
+    ]
+  }
+]
