@@ -13,9 +13,11 @@ const Home = ({ maps }: IProps) => {
   );
 };
 
-export const getServerSideProps = async () => {
+export const getServerSideProps = async ({ req }) => {  
+  const protocol = req.headers['x-forwarded-proto'] || 'http'
+  const baseUrl = req ? `${protocol}://${req.headers.host}` : ''
   const [maps] = await Promise.all([
-    fetch('https://api.minecraft-id.net/museum/?data=maps').then((res) =>
+    fetch(baseUrl + '/data/maps.json').then((res) =>
       res.json()
     ),
   ]);

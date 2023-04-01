@@ -7,6 +7,7 @@ import Tutorial from './Tutorial';
 import Team from './Team';
 import Footer from './Footer';
 import { Member } from './TeamMember';
+import Link from 'next/link';
 
 interface IProps {
   team: Member[];
@@ -34,11 +35,11 @@ const Homepage = ({ team }: IProps) => {
               Ketika Minecraft Bertemu Kesenian
             </p>
             <div className='pt-5'>
-              <a href='https://minecraft-id.net/ticket'>
+              <Link href='/maps'>
                 <button className='font-bold mv-btn btn-blue flex items-center transition duration-300 ease-in-out hover:bg-dark-blue'>
-                  Get Ticket
+                  Explore the world
                 </button>
-              </a>
+              </Link>
             </div>
           </div>
         </div>
