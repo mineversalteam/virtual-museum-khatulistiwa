@@ -50,7 +50,7 @@ const Footer = () => {
         </div>
 
         <p className='text-center text-white text-lg absolute w-full bottom-8 font-dmSans'>
-          Copyright © 2021 Mineversal Team. All rights reserved.
+          Copyright © 2023 Mineversal Team. All rights reserved.
         </p>
       </footer>
     </div>
