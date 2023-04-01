@@ -55,7 +55,7 @@ const Team = ({ data }: IProps) => {
       <div className='container mx-auto px-5 relative z-10'>
         <div className='text-center'>
           <h1 className='title'>03. Map Maker</h1>
-          <p className='subtitle'>360 View & Public Minecraft Server</p>
+          <p className='subtitle'>Making the virtual world a little more real, one map at a time.</p>
         </div>
 
         <div id='mivubi-team' className='py-10 px-5'>
